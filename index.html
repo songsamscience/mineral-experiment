@@ -1730,7 +1730,7 @@ const MINERALS = {
     hardness: 6,
     bodyColorOptions: [
       {label:'검붉은색~흑회색(금속광택)', color:'#3a1f1a', correct:true},
-      {label:'순수한 검은색', color:'#0a0a0a', correct:false},
+      {label:'은색에 가까운 회색', color:'#888888', correct:false},
       {label:'황동색', color:'#c8a747', correct:false},
       {label:'밝은 붉은색', color:'#d04030', correct:false}
     ],
@@ -3967,7 +3967,7 @@ function buildStage7() {
           <p>② <input type="text" class="fill-blank-input" data-blank="1" data-answer="염산 반응"> : 묽은 염산과 반응하여 거품이 발생하는 광물은 방해석이다.</p>
           <p>③ <input type="text" class="fill-blank-input" data-blank="2" data-answer="자성"> : 클립이 달라붙는 강한 자성을 가진 광물은 자철석이다.</p>
           <p>④ <input type="text" class="fill-blank-input" data-blank="3" data-answer="굳기"> : 광물이 다른 물질에 의해 긁히는 데 대한 저항의 정도로, 모스 굳기계로 비교한다.</p>
-          <p style="margin-top:10px;"><strong>▶ 결론:</strong> 광물은 ⑤ <input type="text" class="fill-blank-input" data-blank="4" data-answer="겉보기 색">(이)가 아니라, 조흔색·자성·염산 반응·굳기 등 ⑥ <input type="text" class="fill-blank-input" data-blank="5" data-answer="고유한"> 특성으로 구별해야 한다.</p>
+          <p style="margin-top:10px;"><strong>▶ 결론:</strong> ⑤ <input type="text" class="fill-blank-input" data-blank="4" data-answer="겉보기 색">은(는) 광물 구별의 주요 특성 중 하나이지만, 비슷한 색의 광물(예: 황철석과 황동석, 자철석과 적철석)은 이것만으로 구별하기 어렵다. 따라서 조흔색·자성·염산 반응·굳기 등 광물마다 다른 ⑥ <input type="text" class="fill-blank-input" data-blank="5" data-answer="고유한"> 특성을 함께 활용하여 구별해야 한다.</p>
         </div>
         <button class="btn btn-primary" id="a4SubmitBtn" style="margin-top:14px;">정답 확인</button>
         <div class="feedback-banner" id="a4Fb"></div>
@@ -4085,13 +4085,13 @@ function buildStage7() {
     {
       ids: ['magnetite','hematite'],
       attrs: [
-        {key:'겉보기 색', target0:'검은색(금속광택)', target1:'검붉은색~흑회색'},
+        {key:'겉보기 색', target0:'검은색에 은색 빛(금속광택)', target1:'검붉은색~흑회색'},
         {key:'조흔색', target0:'검은색', target1:'붉은색'},
         {key:'자성', target0:'강한 자성', target1:'약함(거의 없음)'},
         {key:'염산 반응', target0:'반응 없음', target1:'반응 없음'},
         {key:'굳기', target0:'5.5~6.5', target1:'5.5~6.5'}
       ],
-      common: '두 광물 모두 검은 계열의 겉보기 색을 띠고, 굳기가 비슷하며, 염산에 반응하지 않습니다.',
+      common: '두 광물 모두 어두운 색 계열의 겉보기 색을 띠고, 굳기가 비슷하며, 염산에 반응하지 않습니다.',
       diff: '조흔색(자철석=검은색, 적철석=붉은색)과 자성(자철석=강함, 적철석=약함)으로 구별할 수 있습니다.'
     },
     {
@@ -4128,8 +4128,13 @@ function buildStage7() {
     const m1 = MINERALS[pair.ids[1]];
     const allAttrs = [];
     pair.attrs.forEach(a => {
-      allAttrs.push({key:a.key, value:a.target0, mineral:0});
-      allAttrs.push({key:a.key, value:a.target1, mineral:1});
+      if (a.target0 === a.target1) {
+        // 두 광물의 값이 동일하면 카드 하나만 생성, 양쪽 모두 정답
+        allAttrs.push({key:a.key, value:a.target0, mineral:'both'});
+      } else {
+        allAttrs.push({key:a.key, value:a.target0, mineral:0});
+        allAttrs.push({key:a.key, value:a.target1, mineral:1});
+      }
     });
     for (let i = allAttrs.length-1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i+1));
@@ -4166,7 +4171,10 @@ function buildStage7() {
       card.dataset.mineral = a.mineral;
       card.dataset.key = a.key;
       card.dataset.value = a.value;
-      card.innerHTML = `<strong>${a.key}:</strong> ${a.value}`;
+      const bothBadge = a.mineral === 'both'
+        ? '<span style="display:inline-block; margin-left:6px; background:rgba(212,160,76,0.85); color:#3a2a18; font-size:10px; padding:2px 7px; border-radius:10px; font-weight:700;">양쪽 공통</span>'
+        : '';
+      card.innerHTML = `<strong>${a.key}:</strong> ${a.value}${bothBadge}`;
       card.addEventListener('dragstart', (e) => {
         e.dataTransfer.setData('text/plain', i);
         card.classList.add('dragging');
@@ -4209,7 +4217,9 @@ function buildStage7() {
     });
 
     const placeAttr = (card, targetIdx) => {
-      const correct = card.dataset.mineral == targetIdx;
+      // mineral === 'both'인 경우 양쪽 모두 정답 (target0 === target1)
+      const isBoth = card.dataset.mineral === 'both';
+      const correct = isBoth || card.dataset.mineral == targetIdx;
       const zone = area.querySelector(`#dropZone${targetIdx}`);
 
       if (correct) {
@@ -4221,6 +4231,20 @@ function buildStage7() {
         if (tip) tip.remove();
         placedCard.classList.add('correct');
         zone.appendChild(placedCard);
+
+        // 'both'인 경우 반대 쪽 슬롯에도 카드 복제하여 배치
+        if (isBoth) {
+          const otherIdx = targetIdx == 0 ? 1 : 0;
+          const otherZone = area.querySelector(`#dropZone${otherIdx}`);
+          const placedCard2 = card.cloneNode(true);
+          placedCard2.removeAttribute('draggable');
+          placedCard2.classList.remove('dragging');
+          const tip2 = placedCard2.querySelector('.confirm-tip');
+          if (tip2) tip2.remove();
+          placedCard2.classList.add('correct');
+          otherZone.appendChild(placedCard2);
+        }
+
         card.classList.add('placed');
         card.style.pointerEvents = 'none';
         playSound('match');
@@ -4272,8 +4296,18 @@ function buildStage7() {
 
       const remaining = pool.querySelectorAll('.attr-card:not(.placed)').length;
       if (remaining === 0) {
-        const correctCount = area.querySelectorAll('#dropZone0 .attr-card.correct, #dropZone1 .attr-card.correct').length;
-        const total = pair.attrs.length * 2;
+        // 실제 카드 수 (both인 attr은 1장, 다른 attr은 2장)
+        const totalCards = pair.attrs.reduce((sum, a) => sum + (a.target0 === a.target1 ? 1 : 2), 0);
+        // 정답 카운트: pool에서 placed된 카드는 모두 정답이었음 (오답은 풀로 복귀하므로)
+        // both 카드는 양쪽에 표시되어 .correct가 2개지만 점수는 1로 카운트
+        let correctCount = 0;
+        pair.attrs.forEach(a => {
+          // 해당 attr의 카드가 placed이면 정답 처리됨
+          // 키-값 조합으로 찾기는 까다로우므로 단순히 totalCards가 모두 정답 처리됐다고 가정
+          // (오답은 풀로 복귀하여 다시 시도할 수 있고, 종료 시점에는 모두 정답이어야 함)
+          correctCount += a.target0 === a.target1 ? 1 : 2;
+        });
+        const total = totalCards;
         const resultDiv = area.querySelector('#pairResult');
         resultDiv.style.display = 'block';
         resultDiv.innerHTML = `
