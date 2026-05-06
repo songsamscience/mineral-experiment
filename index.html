@@ -445,7 +445,10 @@ header {
   margin-bottom: 16px;
   cursor: grab;
   position: relative;
+  padding: 16px;
+  overflow: hidden;
 }
+.obs-mineral-svg-wrap > svg { max-width: 100%; max-height: 100%; }
 
 .obs-mineral-svg-wrap:active { cursor: grabbing; }
 
@@ -1551,7 +1554,7 @@ footer {
 const MINERALS = {
   quartz: {
     id: 'quartz', name: '석영', formula: 'SiO₂',
-    bodyColor: ['무색~흰색(투명)', 'colorless'],
+    bodyColor: ['흰색~무색투명', 'colorless'],
     streakColor: '긁히지 않음', streakRgb: null,
     magnetism: 'none',
     hclReaction: 'none',
@@ -1571,7 +1574,7 @@ const MINERALS = {
   },
   calcite: {
     id: 'calcite', name: '방해석', formula: 'CaCO₃',
-    bodyColor: ['흰색~무색', 'white'],
+    bodyColor: ['흰색~무색투명', 'white'],
     streakColor: '흰색', streakRgb: '#ffffff',
     magnetism: 'none',
     hclReaction: 'bubbles',
@@ -1651,7 +1654,7 @@ const MINERALS = {
   },
   hematite: {
     id: 'hematite', name: '적철석', formula: 'Fe₂O₃',
-    bodyColor: ['검붉은색~흑회색(금속광택)', 'darkred'],
+    bodyColor: ['검붉은색(금속광택)', 'darkred'],
     streakColor: '붉은색(적갈색)', streakRgb: '#9c3a28',
     magnetism: 'weak',
     hclReaction: 'none',
@@ -1671,13 +1674,13 @@ const MINERALS = {
   },
   biotite: {
     id: 'biotite', name: '흑운모', formula: 'K(Mg,Fe)₃AlSi₃O₁₀(OH)₂',
-    bodyColor: ['검은색~짙은 갈색', 'darkbrown'],
+    bodyColor: ['검은색', 'darkbrown'],
     streakColor: '흰색~회색', streakRgb: '#cccccc',
     magnetism: 'none',
     hclReaction: 'none',
     hardness: 2.75,
     bodyColorOptions: [
-      {label:'검은색~짙은 갈색', color:'#2a1a10', correct:true},
+      {label:'검은색', color:'#0a0a0a', correct:true},
       {label:'흰색', color:'#fafafa', correct:false},
       {label:'황동색', color:'#c8a747', correct:false},
       {label:'붉은색', color:'#a0392c', correct:false}
@@ -2042,54 +2045,54 @@ function renderMineralSVG(id, size = 'small') {
       <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="bt-top-${size}" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3a2818"/>
-            <stop offset="100%" stop-color="#1a0e08"/>
+            <stop offset="0%" stop-color="#1a1a1a"/>
+            <stop offset="100%" stop-color="#050505"/>
           </linearGradient>
           <linearGradient id="bt-side-${size}" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#2a1810"/>
-            <stop offset="100%" stop-color="#0a0604"/>
+            <stop offset="0%" stop-color="#0e0e0e"/>
+            <stop offset="100%" stop-color="#000000"/>
           </linearGradient>
         </defs>
-        <!-- 10장의 얇은 육각형 판이 8px 간격으로 촘촘하게 적층 -->
-        <g transform="translate(0,108)">
+        <!-- 10장의 얇은 육각형 판이 7px 간격으로 촘촘하게 적층 (전체를 위로 8px 이동하여 아래 여백 확보) -->
+        <g transform="translate(0,93)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
         </g>
-        <g transform="translate(0,100)">
+        <g transform="translate(0,86)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#3a2818" opacity="0.2"/>
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#1a1a1a" opacity="0.25"/>
         </g>
-        <g transform="translate(0,92)">
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
-        </g>
-        <g transform="translate(0,84)">
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#3a2818" opacity="0.2"/>
-        </g>
-        <g transform="translate(0,76)">
+        <g transform="translate(0,79)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
         </g>
-        <g transform="translate(0,68)">
+        <g transform="translate(0,72)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#3a2818" opacity="0.2"/>
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#1a1a1a" opacity="0.25"/>
         </g>
-        <g transform="translate(0,60)">
+        <g transform="translate(0,65)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
         </g>
-        <g transform="translate(0,52)">
+        <g transform="translate(0,58)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
-          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#3a2818" opacity="0.2"/>
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#1a1a1a" opacity="0.25"/>
+        </g>
+        <g transform="translate(0,51)">
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
         </g>
         <g transform="translate(0,44)">
           <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="#1a1a1a" opacity="0.25"/>
         </g>
-        <!-- 가장 위쪽 판: 윗면(육각형)이 보임 -->
-        <polygon points="22,49 57,29 112,29 147,49 112,69 57,69" fill="url(#bt-top-${size})" stroke="#000" stroke-width="1"/>
-        <!-- 윗면 광택 -->
-        <ellipse cx="84" cy="41" rx="32" ry="3.5" fill="#8a5828" opacity="0.45"/>
-        <ellipse cx="74" cy="55" rx="22" ry="2.5" fill="#6a3818" opacity="0.4"/>
+        <g transform="translate(0,37)">
+          <polygon points="22,15 57,5 112,5 147,15 112,25 57,25" fill="url(#bt-side-${size})" stroke="#000" stroke-width="0.7"/>
+        </g>
+        <!-- 가장 위쪽 판: 윗면(육각형)이 보임 (검정색) -->
+        <polygon points="22,42 57,22 112,22 147,42 112,62 57,62" fill="url(#bt-top-${size})" stroke="#000" stroke-width="1"/>
+        <!-- 윗면 광택 (어두운 회색 계열) -->
+        <ellipse cx="84" cy="34" rx="32" ry="3.5" fill="#3a3a3a" opacity="0.5"/>
+        <ellipse cx="74" cy="48" rx="22" ry="2.5" fill="#2a2a2a" opacity="0.45"/>
         <!-- 미세 결정 구조선 -->
-        <line x1="22" y1="49" x2="57" y2="29" stroke="#5a3818" stroke-width="0.4" opacity="0.5"/>
-        <line x1="147" y1="49" x2="112" y2="29" stroke="#5a3818" stroke-width="0.4" opacity="0.5"/>
+        <line x1="22" y1="42" x2="57" y2="22" stroke="#2a2a2a" stroke-width="0.4" opacity="0.6"/>
+        <line x1="147" y1="42" x2="112" y2="22" stroke="#2a2a2a" stroke-width="0.4" opacity="0.6"/>
       </svg>`,
   };
   return renders[id] || '';
@@ -2977,7 +2980,7 @@ function buildStage4() {
     stage.querySelector('#magMineralName').textContent = m.name;
     const area = stage.querySelector('#magArea');
     area.innerHTML = `
-      <svg width="100%" height="100%" viewBox="0 0 600 320" style="position:absolute; top:0; left:0; pointer-events:none;">
+      <svg id="fieldSvg" width="100%" height="100%" style="position:absolute; top:0; left:0; pointer-events:none;" preserveAspectRatio="none">
         <g id="fieldLines"></g>
       </svg>
       <div id="magMineralAnchor" style="position:absolute; left:60%; top:50%; transform:translate(-50%,-50%); width:130px; height:130px;">${renderMineralSVG(id, 'large')}</div>
@@ -2988,6 +2991,13 @@ function buildStage4() {
         </svg>
       </div>
     `;
+    // 자기장 SVG의 viewBox를 실제 영역 크기로 설정 → 픽셀 좌표를 그대로 사용 가능
+    const fieldSvg = area.querySelector('#fieldSvg');
+    const syncFieldViewBox = () => {
+      const r = area.getBoundingClientRect();
+      fieldSvg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
+    };
+    syncFieldViewBox();
     const fb = stage.querySelector('#magFeedback');
     fb.classList.remove('show','success','error');
     let stuck = false;
@@ -3059,14 +3069,22 @@ function buildStage4() {
         clip.style.top = (ay - 25) + 'px';
         stuck = true;
         playSound('magnet');
+        // 자기장 곡선이 자철석(반지름 ~65px)을 정확히 둘러싸도록 그리기 직전 viewBox 동기화
+        syncFieldViewBox();
+        const r0 = Math.min(ar.width, ar.height) / 2; // 광물 반지름
+        const rIn = r0 * 0.55;   // 광물 안쪽에서 곡선 시작
+        const rOut = r0 * 1.15;  // 광물 바깥쪽에서 곡선 끝
+        const rMid = r0 * 0.9;
         let lines = '';
         for (let i = 0; i < 6; i++) {
           const angle = (Math.PI * 2 * i) / 6;
-          const x1 = ax + Math.cos(angle) * 30;
-          const y1 = ay + Math.sin(angle) * 30;
-          const x2 = ax + Math.cos(angle) * 80;
-          const y2 = ay + Math.sin(angle) * 80;
-          lines += `<path d="M ${x1},${y1} Q ${ax+Math.cos(angle)*50},${ay+Math.sin(angle)*50-10} ${x2},${y2}" stroke="var(--accent-primary)" stroke-width="1.5" fill="none" opacity="0.6" stroke-dasharray="4 4">
+          const x1 = ax + Math.cos(angle) * rIn;
+          const y1 = ay + Math.sin(angle) * rIn;
+          const x2 = ax + Math.cos(angle) * rOut;
+          const y2 = ay + Math.sin(angle) * rOut;
+          const cxm = ax + Math.cos(angle) * rMid;
+          const cym = ay + Math.sin(angle) * rMid - 10;
+          lines += `<path d="M ${x1},${y1} Q ${cxm},${cym} ${x2},${y2}" stroke="var(--accent-primary)" stroke-width="1.5" fill="none" opacity="0.6" stroke-dasharray="4 4">
             <animate attributeName="stroke-dashoffset" from="0" to="-16" dur="1s" repeatCount="indefinite"/>
           </path>`;
         }
@@ -3180,7 +3198,7 @@ function buildStage5() {
       <h2 class="stage-title"><span class="stage-number">STEP 6</span> 염산 반응 관찰</h2>
       <p class="stage-subtitle"><strong>스포이트를 클릭</strong>하면 묽은 염산(HCl)이 한 방울씩 떨어집니다. 어떤 광물이 거품을 만들까요?</p>
       <div class="info-box">
-        🧪 <strong>화학 반응식:</strong> CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑ (방해석에서 일어나는 반응)
+        🧪 <strong>화학 반응식:</strong> CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑
       </div>
       <div class="hcl-layout">
         <div style="text-align:center;">
@@ -3951,7 +3969,7 @@ function buildStage7() {
     {
       ids: ['magnetite','hematite'],
       attrs: [
-        {key:'겉보기 색', target0:'검은색에 은색 빛(금속광택)', target1:'검붉은색~흑회색'},
+        {key:'겉보기 색', target0:'검은색(금속광택)', target1:'검붉은색(금속광택)'},
         {key:'조흔색', target0:'검은색', target1:'붉은색'},
         {key:'자성', target0:'강한 자성', target1:'약함(거의 없음)'},
         {key:'염산 반응', target0:'반응 없음', target1:'반응 없음'},
@@ -3975,13 +3993,13 @@ function buildStage7() {
     {
       ids: ['quartz','calcite'],
       attrs: [
-        {key:'겉보기 색', target0:'무색~흰색(투명)', target1:'흰색~무색'},
+        {key:'겉보기 색', target0:'흰색~무색투명', target1:'흰색~무색투명'},
         {key:'조흔색', target0:'긁히지 않음', target1:'흰색'},
         {key:'자성', target0:'없음', target1:'없음'},
         {key:'염산 반응', target0:'반응 없음', target1:'거품 발생(CO₂)'},
         {key:'굳기', target0:'7', target1:'3'}
       ],
-      common: '두 광물 모두 흰색~무색의 겉보기 색을 띠고, 자성이 없습니다.',
+      common: '두 광물 모두 흰색~무색투명의 겉보기 색을 띠고, 자성이 없습니다.',
       diff: '굳기(석영 7, 방해석 3), 염산 반응(방해석만 거품 발생), 조흔판 긁힘 여부로 구별할 수 있습니다.'
     }
   ];
@@ -4222,7 +4240,7 @@ function buildStage7() {
     const total = inputs.length;
     const fb = stage.querySelector('#a4Fb');
     const synonyms = {
-      0: ['조흔색','조흔'],
+      0: ['조흔색'],
       1: ['염산 반응','염산','HCl','염산반응','거품'],
       2: ['자성','자기'],
       3: ['굳기','경도'],
@@ -4325,35 +4343,42 @@ function renderFlowchartSVG() {
       <rect x="620" y="460" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
       <text x="720" y="484" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">③ 조흔판에 긁기</text>
 
-      <!-- 4갈래 분기 -->
-      <path d="M 660 508 L 660 540 L 100 540 L 100 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 685 508 L 685 540 L 320 540 L 320 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 720 508 L 720 540 L 540 540 L 540 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 750 508 L 750 540 L 760 540 L 760 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+      <!-- 5갈래 분기: 5개 박스를 균등 배치 (각 박스 width 160, gap 15) -->
+      <path d="M 645 508 L 645 540 L 100 540 L 100 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+      <path d="M 685 508 L 685 540 L 285 540 L 285 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+      <path d="M 720 508 L 720 540 L 470 540 L 470 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+      <path d="M 750 508 L 750 540 L 655 540 L 655 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+      <path d="M 790 508 L 790 540 L 840 540 L 840 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
-      <!-- 분기 1: 흰색~회색 → 흑운모 -->
-      <rect x="20" y="582" width="170" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="105" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">흰색~회색 조흔</text>
-      <text x="105" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 흑운모</text>
-      <text x="105" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(검갈색 광물)</text>
+      <!-- 분기 1: 흰색~회색 조흔색 → 흑운모 -->
+      <rect x="20" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+      <text x="100" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">흰색~회색 조흔색</text>
+      <text x="100" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 흑운모</text>
+      <text x="100" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(검은색 광물)</text>
 
       <!-- 분기 2: 긁히지 않음 → 석영 -->
-      <rect x="240" y="582" width="170" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="325" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">긁히지 않음</text>
-      <text x="325" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 석영</text>
-      <text x="325" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 7 &gt; 조흔판)</text>
+      <rect x="205" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+      <text x="285" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">긁히지 않음</text>
+      <text x="285" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 석영</text>
+      <text x="285" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 7 &gt; 조흔판)</text>
 
-      <!-- 분기 3: 붉은색 조흔 → 적철석 -->
-      <rect x="460" y="582" width="170" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="545" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">붉은색 조흔</text>
-      <text x="545" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 적철석</text>
-      <text x="545" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(약한 자성)</text>
+      <!-- 분기 3: 붉은색 조흔색 → 적철석 -->
+      <rect x="390" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+      <text x="470" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">붉은색 조흔색</text>
+      <text x="470" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 적철석</text>
+      <text x="470" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(약한 자성)</text>
 
-      <!-- 분기 4: 검은색 조흔 → 황철석/황동석 -->
-      <rect x="680" y="582" width="200" height="62" rx="10" fill="rgba(212,160,76,0.18)" stroke="var(--accent-secondary)" stroke-width="2.5"/>
-      <text x="780" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">검은색 조흔</text>
-      <text x="780" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황철석/황동석</text>
-      <text x="780" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기로 추가 구별)</text>
+      <!-- 분기 4: 검은색 조흔색 → 황철석 -->
+      <rect x="575" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+      <text x="655" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">검은색 조흔색</text>
+      <text x="655" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황철석</text>
+      <text x="655" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 6~6.5)</text>
+
+      <!-- 분기 5: 녹흑색 조흔색 → 황동석 -->
+      <rect x="760" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+      <text x="840" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">녹흑색 조흔색</text>
+      <text x="840" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황동석</text>
+      <text x="840" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 3.5~4)</text>
 
       <!-- 범례 -->
       <g transform="translate(30, 680)">
@@ -4638,19 +4663,29 @@ async function downloadPDF() {
     });
     const imgData = canvas.toDataURL('image/png');
     const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfW = 210, pdfH = 297;
-    const imgW = pdfW;
-    const imgH = (canvas.height * imgW) / canvas.width;
-    let posY = 0;
-    let remaining = imgH;
-    pdf.addImage(imgData, 'PNG', 0, posY, imgW, imgH);
-    while (remaining > pdfH) {
-      posY -= pdfH;
-      remaining -= pdfH;
-      pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, posY, imgW, imgH);
+
+    // A4 크기(mm), 안전 여백
+    const A4_W = 210, A4_H = 297, MARGIN = 8;
+    // 보고서 캔버스의 가로/세로 비율로 PDF 방향 자동 선택
+    const isPortrait = canvas.height >= canvas.width;
+    const pageW = isPortrait ? A4_W : A4_H;
+    const pageH = isPortrait ? A4_H : A4_W;
+    const pdf = new jsPDF(isPortrait ? 'p' : 'l', 'mm', 'a4');
+
+    // 한 페이지 안에 비율 유지하며 fit (가로·세로 모두 페이지 내부에 들어오도록)
+    const availW = pageW - MARGIN * 2;
+    const availH = pageH - MARGIN * 2;
+    const imgRatio = canvas.width / canvas.height;
+    let drawW = availW, drawH = availW / imgRatio;
+    if (drawH > availH) {
+      drawH = availH;
+      drawW = availH * imgRatio;
     }
+    // 페이지 중앙에 배치
+    const offsetX = (pageW - drawW) / 2;
+    const offsetY = (pageH - drawH) / 2;
+    pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawW, drawH);
+
     const date = new Date().toISOString().slice(0,10);
     pdf.save(`송쌤과학_광물특성_보고서_${date}.pdf`);
 
