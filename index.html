@@ -422,9 +422,7 @@ header {
   align-items: start;
 }
 
-@media (max-width: 768px) {
-  .obs-container { grid-template-columns: 1fr; }
-}
+@media (max-width: 768px) { .obs-container { grid-template-columns: 1fr; } }
 
 .obs-mineral-display {
   background: var(--bg-secondary);
@@ -494,9 +492,7 @@ header {
   margin: 20px 0;
 }
 
-.streak-plate-wrap {
-  text-align: center;
-}
+.streak-plate-wrap { text-align: center; }
 
 .streak-plate-label {
   font-size: 13px;
@@ -516,19 +512,6 @@ header {
 
 .streak-plate.white-plate { background: #ffffff; }
 .streak-plate.black-plate { background: #1a1a1a; }
-
-.draggable-mineral {
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  margin: 16px auto;
-  cursor: grab;
-  border: 3px solid var(--accent-primary);
-  box-shadow: var(--shadow-md);
-}
-
-.draggable-mineral:active { cursor: grabbing; }
 
 /* CLIP MAGNETISM */
 .magnetism-area {
@@ -550,38 +533,6 @@ header {
   border-radius: 14px;
   overflow: hidden;
   cursor: crosshair;
-}
-
-/* HARDNESS COMPARE */
-.hardness-area {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 20px;
-  align-items: center;
-  padding: 20px;
-  background: var(--bg-secondary);
-  border-radius: 14px;
-  border: 2px solid var(--border-color);
-  margin: 16px 0;
-}
-
-@media (max-width: 768px) {
-  .hardness-area { grid-template-columns: 1fr; }
-}
-
-.hardness-mineral {
-  padding: 16px;
-  background: var(--bg-card);
-  border-radius: 12px;
-  text-align: center;
-  border: 2px solid var(--border-color);
-}
-
-.hardness-vs {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 32px;
-  color: var(--accent-primary);
-  text-align: center;
 }
 
 /* MOHS SCALE */
@@ -616,9 +567,7 @@ header {
   margin-bottom: 2px;
 }
 
-@media (max-width: 768px) {
-  .mohs-scale { grid-template-columns: repeat(5, 1fr); }
-}
+@media (max-width: 768px) { .mohs-scale { grid-template-columns: repeat(5, 1fr); } }
 
 /* QUIZ */
 .quiz-options {
@@ -710,13 +659,6 @@ header {
 }
 
 .compare-slot.filled { border-style: solid; border-color: var(--accent-primary); }
-
-.slot-label {
-  font-weight: 600;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-  font-size: 13px;
-}
 
 .attribute-cards {
   display: flex;
@@ -910,9 +852,7 @@ footer {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.flowchart-svg-wrapper .flowchart-svg {
-  min-width: 720px;
-}
+.flowchart-svg-wrapper .flowchart-svg { min-width: 720px; }
 
 /* AI RECOMMENDATION */
 .ai-rec-section {
@@ -1110,10 +1050,6 @@ footer {
   pointer-events: none;
   transform: scale(1.15);
 }
-.hardness-tool.worn {
-  /* 도구가 닳는 효과: 점점 흐려지면서 약간 작아짐 */
-  transition: filter 0.5s, opacity 0.5s;
-}
 .hardness-tool svg { width: 100%; height: 100%; display: block; }
 .hardness-tool-info {
   font-size: 14px;
@@ -1148,9 +1084,7 @@ footer {
   transform-origin: center;
   transition: transform 0.2s;
 }
-.hcl-dropper.squeezing svg > ellipse {
-  transform: scaleY(0.7);
-}
+.hcl-dropper.squeezing svg > ellipse { transform: scaleY(0.7); }
 .dropper-pulse {
   position: absolute;
   inset: 0;
@@ -1246,8 +1180,6 @@ footer {
   .hardness-target { min-height: 230px; padding: 14px; }
   .hardness-target-mineral { width: 150px; height: 150px; }
   .hardness-tool { width: 120px; height: 120px; }
-  .hardness-area { padding: 14px; gap: 10px; }
-  .hardness-vs { font-size: 24px; }
 
   /* 갤러리 */
   .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -1372,9 +1304,7 @@ footer {
   transform: rotate(90deg);
 }
 
-.photo-gallery-body {
-  padding: 24px 28px;
-}
+.photo-gallery-body { padding: 24px 28px; }
 
 .photo-gallery-intro {
   background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(200,71,43,0.05));
@@ -1436,9 +1366,7 @@ footer {
   padding: 4px;
 }
 
-.photo-item:hover .photo-item-img-wrap img {
-  transform: scale(1.06);
-}
+.photo-item:hover .photo-item-img-wrap img { transform: scale(1.06); }
 
 .photo-item-name {
   font-family: 'Black Han Sans', sans-serif;
@@ -2182,125 +2110,63 @@ function playSound(type) {
     if (ctx.state === 'suspended') ctx.resume();
     const now = ctx.currentTime;
 
-    if (type === 'ding') {
+    // 헬퍼: 단일 오실레이터 톤
+    const tone = (freq, dur, vol = 0.15, start = 0, opts = {}) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.value = 880;
-      gain.gain.setValueAtTime(0.2, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-      osc.start(now); osc.stop(now + 0.3);
-    } else if (type === 'click') {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.value = 600;
-      osc.type = 'sine';
-      gain.gain.setValueAtTime(0.1, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
-      osc.start(now); osc.stop(now + 0.1);
-    } else if (type === 'success') {
-      [523, 659, 784, 1047].forEach((f, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain); gain.connect(ctx.destination);
-        osc.frequency.value = f;
-        gain.gain.setValueAtTime(0, now + i*0.08);
-        gain.gain.linearRampToValueAtTime(0.15, now + i*0.08 + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i*0.08 + 0.4);
-        osc.start(now + i*0.08); osc.stop(now + i*0.08 + 0.4);
-      });
-    } else if (type === 'error') {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.setValueAtTime(220, now);
-      osc.frequency.linearRampToValueAtTime(110, now + 0.3);
-      gain.gain.setValueAtTime(0.15, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-      osc.start(now); osc.stop(now + 0.3);
-    } else if (type === 'scratch') {
-      const noise = ctx.createBufferSource();
-      const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.15, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * 0.3;
-      noise.buffer = buffer;
-      const filter = ctx.createBiquadFilter();
-      filter.type = 'highpass';
-      filter.frequency.value = 1500;
-      const gain = ctx.createGain();
-      gain.gain.setValueAtTime(0.15, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
-      noise.connect(filter); filter.connect(gain); gain.connect(ctx.destination);
-      noise.start(now); noise.stop(now + 0.15);
-    } else if (type === 'magnet') {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.setValueAtTime(120, now);
-      osc.frequency.exponentialRampToValueAtTime(440, now + 0.15);
-      osc.type = 'square';
-      gain.gain.setValueAtTime(0.1, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
-      osc.start(now); osc.stop(now + 0.2);
-    } else if (type === 'bubble') {
-      const noise = ctx.createBufferSource();
-      const buffer = ctx.createBuffer(1, ctx.sampleRate * 0.8, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
-      for (let i = 0; i < data.length; i++) {
-        data[i] = (Math.random() * 2 - 1) * 0.2 * Math.exp(-i / data.length * 3);
+      if (typeof freq === 'function') freq(osc, now + start);
+      else osc.frequency.value = freq;
+      if (opts.type) osc.type = opts.type;
+      if (opts.ramp) {
+        gain.gain.setValueAtTime(0, now + start);
+        gain.gain.linearRampToValueAtTime(vol, now + start + (opts.rampDur || 0.02));
+      } else {
+        gain.gain.setValueAtTime(vol, now + start);
       }
-      noise.buffer = buffer;
+      gain.gain.exponentialRampToValueAtTime(0.001, now + start + dur);
+      osc.start(now + start); osc.stop(now + start + dur);
+    };
+    // 헬퍼: 화이트노이즈
+    const noise = (dur, freq, filterType, vol, decay = false) => {
+      const src = ctx.createBufferSource();
+      const buf = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate);
+      const data = buf.getChannelData(0);
+      for (let i = 0; i < data.length; i++) {
+        data[i] = (Math.random() * 2 - 1) * 0.3 * (decay ? Math.exp(-i / data.length * 3) : 1);
+      }
+      src.buffer = buf;
       const filter = ctx.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.frequency.value = 2500;
+      filter.type = filterType; filter.frequency.value = freq;
       const gain = ctx.createGain();
-      gain.gain.value = 0.3;
-      noise.connect(filter); filter.connect(gain); gain.connect(ctx.destination);
-      noise.start(now); noise.stop(now + 0.8);
+      if (decay) gain.gain.value = vol;
+      else { gain.gain.setValueAtTime(vol, now); gain.gain.exponentialRampToValueAtTime(0.001, now + dur); }
+      src.connect(filter); filter.connect(gain); gain.connect(ctx.destination);
+      src.start(now); src.stop(now + dur);
+    };
+
+    if (type === 'ding') {
+      tone(880, 0.3, 0.2);
+    } else if (type === 'click') {
+      tone(600, 0.1, 0.1, 0, {type: 'sine'});
+    } else if (type === 'success') {
+      [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.4, 0.15, i*0.08, {ramp: true}));
+    } else if (type === 'error') {
+      tone(o => { o.frequency.setValueAtTime(220, now); o.frequency.linearRampToValueAtTime(110, now + 0.3); }, 0.3, 0.15);
+    } else if (type === 'scratch') {
+      noise(0.15, 1500, 'highpass', 0.15);
+    } else if (type === 'magnet') {
+      tone(o => { o.frequency.setValueAtTime(120, now); o.frequency.exponentialRampToValueAtTime(440, now + 0.15); }, 0.2, 0.1, 0, {type: 'square'});
+    } else if (type === 'bubble') {
+      noise(0.8, 2500, 'bandpass', 0.3, true);
     } else if (type === 'fanfare') {
-      [523, 659, 784, 1047, 1319].forEach((f, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain); gain.connect(ctx.destination);
-        osc.frequency.value = f;
-        osc.type = 'triangle';
-        gain.gain.setValueAtTime(0, now + i*0.1);
-        gain.gain.linearRampToValueAtTime(0.18, now + i*0.1 + 0.03);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i*0.1 + 0.6);
-        osc.start(now + i*0.1); osc.stop(now + i*0.1 + 0.6);
-      });
+      [523, 659, 784, 1047, 1319].forEach((f, i) => tone(f, 0.6, 0.18, i*0.1, {type: 'triangle', ramp: true, rampDur: 0.03}));
     } else if (type === 'slide') {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.setValueAtTime(400, now);
-      osc.frequency.linearRampToValueAtTime(600, now + 0.1);
-      osc.type = 'sine';
-      gain.gain.setValueAtTime(0.08, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
-      osc.start(now); osc.stop(now + 0.1);
+      tone(o => { o.frequency.setValueAtTime(400, now); o.frequency.linearRampToValueAtTime(600, now + 0.1); }, 0.1, 0.08, 0, {type: 'sine'});
     } else if (type === 'match') {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.frequency.setValueAtTime(659, now);
-      osc.frequency.linearRampToValueAtTime(988, now + 0.15);
-      osc.type = 'sine';
-      gain.gain.setValueAtTime(0.15, now);
-      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
-      osc.start(now); osc.stop(now + 0.25);
+      tone(o => { o.frequency.setValueAtTime(659, now); o.frequency.linearRampToValueAtTime(988, now + 0.15); }, 0.25, 0.15, 0, {type: 'sine'});
     } else if (type === 'step') {
-      [523, 659, 784].forEach((f, i) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain); gain.connect(ctx.destination);
-        osc.frequency.value = f;
-        gain.gain.setValueAtTime(0, now + i*0.06);
-        gain.gain.linearRampToValueAtTime(0.12, now + i*0.06 + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + i*0.06 + 0.2);
-        osc.start(now + i*0.06); osc.stop(now + i*0.06 + 0.2);
-      });
+      [523, 659, 784].forEach((f, i) => tone(f, 0.2, 0.12, i*0.06, {ramp: true}));
     }
   } catch(e) { console.warn('Audio error:', e); }
 }
