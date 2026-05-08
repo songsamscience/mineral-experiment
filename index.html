@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -31,486 +32,486 @@
   --warning: #d4a04c;
 }
 
-[data-theme="dark"] {
-  --bg-primary: #1a1814;
-  --bg-secondary: #252320;
-  --bg-card: #2d2a25;
-  --bg-accent: #3a352d;
-  --text-primary: #f0ebe0;
-  --text-secondary: #b8b0a0;
-  --text-muted: #807a6e;
-  --accent-primary: #e85a3d;
-  --accent-secondary: #e8b85c;
-  --accent-tertiary: #6a9c79;
-  --border-color: #4a4438;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+[data-theme=“dark”] {
+–bg-primary: #1a1814;
+–bg-secondary: #252320;
+–bg-card: #2d2a25;
+–bg-accent: #3a352d;
+–text-primary: #f0ebe0;
+–text-secondary: #b8b0a0;
+–text-muted: #807a6e;
+–accent-primary: #e85a3d;
+–accent-secondary: #e8b85c;
+–accent-tertiary: #6a9c79;
+–border-color: #4a4438;
+–shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+–shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+–shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+- { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Gowun Dodum', sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
-  background-image:
-    radial-gradient(circle at 20% 10%, rgba(200,71,43,0.04) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(74,124,89,0.04) 0%, transparent 40%);
+font-family: ‘Gowun Dodum’, sans-serif;
+background: var(–bg-primary);
+color: var(–text-primary);
+min-height: 100vh;
+transition: background 0.3s, color 0.3s;
+background-image:
+radial-gradient(circle at 20% 10%, rgba(200,71,43,0.04) 0%, transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(74,124,89,0.04) 0%, transparent 40%);
 }
 
-[data-theme="dark"] body {
-  background-image:
-    radial-gradient(circle at 20% 10%, rgba(232,90,61,0.08) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(106,156,121,0.06) 0%, transparent 40%);
+[data-theme=“dark”] body {
+background-image:
+radial-gradient(circle at 20% 10%, rgba(232,90,61,0.08) 0%, transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(106,156,121,0.06) 0%, transparent 40%);
 }
 
 .container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 20px;
+max-width: 1280px;
+margin: 0 auto;
+padding: 20px;
 }
 
 /* HEADER */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 2px solid var(--border-color);
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 0;
+border-bottom: 2px solid var(–border-color);
+margin-bottom: 24px;
+flex-wrap: wrap;
+gap: 16px;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+display: flex;
+align-items: center;
+gap: 14px;
 }
 
 .brand-icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: var(--shadow-md);
-  transform: rotate(-3deg);
+width: 52px;
+height: 52px;
+background: linear-gradient(135deg, var(–accent-primary), var(–accent-secondary));
+border-radius: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+box-shadow: var(–shadow-md);
+transform: rotate(-3deg);
 }
 
 .brand-text h1 {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 26px;
-  letter-spacing: -0.5px;
-  color: var(--text-primary);
-  font-weight: 400;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 26px;
+letter-spacing: -0.5px;
+color: var(–text-primary);
+font-weight: 400;
 }
 
 .brand-text p {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 2px;
+font-size: 13px;
+color: var(–text-muted);
+margin-top: 2px;
 }
 
 .header-controls {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+display: flex;
+gap: 10px;
+align-items: center;
 }
 
 .btn {
-  padding: 10px 18px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-weight: 500;
+padding: 10px 18px;
+border: 2px solid var(–border-color);
+background: var(–bg-card);
+color: var(–text-primary);
+border-radius: 10px;
+font-family: inherit;
+font-size: 14px;
+cursor: pointer;
+transition: all 0.2s;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-weight: 500;
 }
 
-.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(–shadow-md); }
 .btn:active { transform: translateY(0); }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 
 .btn-primary {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
+background: var(–accent-primary);
+color: white;
+border-color: var(–accent-primary);
 }
 
-.btn-primary:hover { background: var(--accent-primary); filter: brightness(1.1); }
+.btn-primary:hover { background: var(–accent-primary); filter: brightness(1.1); }
 
 .btn-secondary {
-  background: var(--accent-tertiary);
-  color: white;
-  border-color: var(--accent-tertiary);
+background: var(–accent-tertiary);
+color: white;
+border-color: var(–accent-tertiary);
 }
 
 /* PROGRESS BAR */
 .progress-container {
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin-bottom: 24px;
-  box-shadow: var(--shadow-sm);
+background: var(–bg-card);
+border: 2px solid var(–border-color);
+border-radius: 14px;
+padding: 16px 20px;
+margin-bottom: 24px;
+box-shadow: var(–shadow-sm);
 }
 
 .progress-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  font-size: 13px;
-  color: var(--text-secondary);
-  font-weight: 500;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 12px;
+font-size: 13px;
+color: var(–text-secondary);
+font-weight: 500;
 }
 
 .progress-steps {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
+display: flex;
+gap: 6px;
+flex-wrap: wrap;
 }
 
 .step-pill {
-  flex: 1;
-  min-width: 60px;
-  padding: 8px 6px;
-  background: var(--bg-accent);
-  border-radius: 8px;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-muted);
-  transition: all 0.3s;
-  border: 2px solid transparent;
+flex: 1;
+min-width: 60px;
+padding: 8px 6px;
+background: var(–bg-accent);
+border-radius: 8px;
+text-align: center;
+font-size: 11px;
+font-weight: 600;
+color: var(–text-muted);
+transition: all 0.3s;
+border: 2px solid transparent;
 }
 
 .step-pill.active {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+background: var(–accent-primary);
+color: white;
+border-color: var(–accent-primary);
+transform: translateY(-2px);
+box-shadow: var(–shadow-md);
 }
 
 .step-pill.done {
-  background: var(--accent-tertiary);
-  color: white;
-  border-color: var(--accent-tertiary);
+background: var(–accent-tertiary);
+color: white;
+border-color: var(–accent-tertiary);
 }
 
 .step-pill.skipped {
-  background: var(--bg-card);
-  color: var(--text-muted);
-  border: 2px dashed var(--text-muted);
-  text-decoration: line-through;
-  opacity: 0.7;
+background: var(–bg-card);
+color: var(–text-muted);
+border: 2px dashed var(–text-muted);
+text-decoration: line-through;
+opacity: 0.7;
 }
 
 .btn-skip {
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px dashed var(--text-muted);
-  font-size: 13px;
-  padding: 8px 14px;
+background: transparent;
+color: var(–text-muted);
+border: 1px dashed var(–text-muted);
+font-size: 13px;
+padding: 8px 14px;
 }
-.btn-skip:hover { color: var(--accent-primary); border-color: var(--accent-primary); border-style: solid; }
+.btn-skip:hover { color: var(–accent-primary); border-color: var(–accent-primary); border-style: solid; }
 
 /* MAIN CONTENT */
 .stage {
-  display: none;
-  animation: fadeIn 0.5s ease;
+display: none;
+animation: fadeIn 0.5s ease;
 }
 
 .stage.active { display: block; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 .stage-card {
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 20px;
-  padding: 32px;
-  box-shadow: var(--shadow-md);
-  margin-bottom: 20px;
+background: var(–bg-card);
+border: 2px solid var(–border-color);
+border-radius: 20px;
+padding: 32px;
+box-shadow: var(–shadow-md);
+margin-bottom: 20px;
 }
 
 .stage-title {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 28px;
+font-weight: 400;
+color: var(–text-primary);
+margin-bottom: 8px;
+display: flex;
+align-items: center;
+gap: 12px;
 }
 
 .stage-number {
-  display: inline-block;
-  background: var(--accent-primary);
-  color: white;
-  padding: 4px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-family: 'Gowun Dodum', sans-serif;
+display: inline-block;
+background: var(–accent-primary);
+color: white;
+padding: 4px 14px;
+border-radius: 20px;
+font-size: 14px;
+font-family: ‘Gowun Dodum’, sans-serif;
 }
 
 .stage-subtitle {
-  color: var(--text-secondary);
-  font-size: 15px;
-  margin-bottom: 24px;
-  line-height: 1.6;
+color: var(–text-secondary);
+font-size: 15px;
+margin-bottom: 24px;
+line-height: 1.6;
 }
 
 /* SAFETY CHECKLIST */
 .safety-list {
-  background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(200,71,43,0.05));
-  border: 2px dashed var(--accent-secondary);
-  border-radius: 14px;
-  padding: 24px;
-  margin: 20px 0;
+background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(200,71,43,0.05));
+border: 2px dashed var(–accent-secondary);
+border-radius: 14px;
+padding: 24px;
+margin: 20px 0;
 }
 
 .safety-item {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: 2px solid transparent;
+display: flex;
+align-items: center;
+gap: 14px;
+padding: 14px;
+background: var(–bg-card);
+border-radius: 10px;
+margin-bottom: 10px;
+cursor: pointer;
+transition: all 0.2s;
+border: 2px solid transparent;
 }
 
-.safety-item:hover { background: var(--bg-secondary); border-color: var(--accent-secondary); }
-.safety-item.checked { border-color: var(--success); background: rgba(74,124,89,0.08); }
+.safety-item:hover { background: var(–bg-secondary); border-color: var(–accent-secondary); }
+.safety-item.checked { border-color: var(–success); background: rgba(74,124,89,0.08); }
 
 .safety-checkbox {
-  width: 26px;
-  height: 26px;
-  border: 2px solid var(--border-color);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-  flex-shrink: 0;
+width: 26px;
+height: 26px;
+border: 2px solid var(–border-color);
+border-radius: 6px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
+flex-shrink: 0;
 }
 
 .safety-item.checked .safety-checkbox {
-  background: var(--success);
-  border-color: var(--success);
-  color: white;
+background: var(–success);
+border-color: var(–success);
+color: white;
 }
 
-.safety-text { font-size: 15px; color: var(--text-primary); }
+.safety-text { font-size: 15px; color: var(–text-primary); }
 
 /* MINERAL TRAY */
 .mineral-tray {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 18px;
-  margin: 24px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+gap: 18px;
+margin: 24px 0;
 }
 
 .mineral-card {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: 16px;
-  padding: 18px;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-  position: relative;
+background: var(–bg-secondary);
+border: 2px solid var(–border-color);
+border-radius: 16px;
+padding: 18px;
+cursor: pointer;
+transition: all 0.3s;
+text-align: center;
+position: relative;
 }
 
 .mineral-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-md);
+transform: translateY(-4px);
+border-color: var(–accent-primary);
+box-shadow: var(–shadow-md);
 }
 
 .mineral-card.selected {
-  border-color: var(--accent-primary);
-  background: linear-gradient(135deg, rgba(200,71,43,0.05), rgba(212,160,76,0.05));
-  box-shadow: var(--shadow-lg);
+border-color: var(–accent-primary);
+background: linear-gradient(135deg, rgba(200,71,43,0.05), rgba(212,160,76,0.05));
+box-shadow: var(–shadow-lg);
 }
 
 .mineral-card.observed::after {
-  content: "✓";
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  background: var(--success);
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
+content: “✓”;
+position: absolute;
+top: 8px;
+right: 8px;
+width: 24px;
+height: 24px;
+background: var(–success);
+color: white;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 14px;
+font-weight: bold;
 }
 
 .mineral-svg {
-  width: 100%;
-  height: 110px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  background: var(--bg-accent);
-  overflow: hidden;
+width: 100%;
+height: 110px;
+border-radius: 10px;
+margin-bottom: 12px;
+background: var(–bg-accent);
+overflow: hidden;
 }
 
 .mineral-name {
-  font-family: 'Black Han Sans', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: var(--text-primary);
-  margin-bottom: 4px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-weight: 400;
+font-size: 18px;
+color: var(–text-primary);
+margin-bottom: 4px;
 }
 
 .mineral-formula {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-family: 'Gowun Dodum', sans-serif;
+font-size: 12px;
+color: var(–text-muted);
+font-family: ‘Gowun Dodum’, sans-serif;
 }
 
 /* INFO BOX */
 .info-box {
-  background: linear-gradient(135deg, rgba(74,124,89,0.08), rgba(74,124,89,0.02));
-  border-left: 4px solid var(--accent-tertiary);
-  padding: 16px 20px;
-  border-radius: 8px;
-  margin: 16px 0;
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+background: linear-gradient(135deg, rgba(74,124,89,0.08), rgba(74,124,89,0.02));
+border-left: 4px solid var(–accent-tertiary);
+padding: 16px 20px;
+border-radius: 8px;
+margin: 16px 0;
+font-size: 14px;
+color: var(–text-secondary);
+line-height: 1.6;
 }
 
 .info-box.warning {
-  background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(212,160,76,0.02));
-  border-left-color: var(--accent-secondary);
+background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(212,160,76,0.02));
+border-left-color: var(–accent-secondary);
 }
 
-.info-box strong { color: var(--text-primary); }
+.info-box strong { color: var(–text-primary); }
 
 /* OBSERVATION VIEW */
 .obs-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  align-items: start;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 24px;
+align-items: start;
 }
 
 @media (max-width: 768px) { .obs-container { grid-template-columns: 1fr; } }
 
 .obs-mineral-display {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+background: var(–bg-secondary);
+border: 2px solid var(–border-color);
+border-radius: 16px;
+padding: 24px;
+text-align: center;
+position: relative;
+overflow: hidden;
 }
 
 .obs-mineral-svg-wrap {
-  width: 100%;
-  height: 280px;
-  background: radial-gradient(circle at center, var(--bg-accent), var(--bg-secondary));
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  cursor: grab;
-  position: relative;
-  padding: 16px;
-  overflow: hidden;
+width: 100%;
+height: 280px;
+background: radial-gradient(circle at center, var(–bg-accent), var(–bg-secondary));
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 16px;
+cursor: grab;
+position: relative;
+padding: 16px;
+overflow: hidden;
 }
 .obs-mineral-svg-wrap > svg { max-width: 100%; max-height: 100%; }
 
 .obs-mineral-svg-wrap:active { cursor: grabbing; }
 
 .color-options {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 16px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 10px;
+margin-top: 16px;
 }
 
 .color-btn {
-  padding: 14px 12px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 13px;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 500;
+padding: 14px 12px;
+border: 2px solid var(–border-color);
+background: var(–bg-card);
+border-radius: 10px;
+cursor: pointer;
+font-family: inherit;
+font-size: 13px;
+transition: all 0.2s;
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: 500;
 }
 
-.color-btn:hover { border-color: var(--accent-primary); transform: translateY(-2px); }
-.color-btn.selected { background: var(--accent-primary); color: white; border-color: var(--accent-primary); }
-.color-btn.correct { background: var(--success); color: white; border-color: var(--success); }
-.color-btn.wrong { background: var(--error); color: white; border-color: var(--error); }
+.color-btn:hover { border-color: var(–accent-primary); transform: translateY(-2px); }
+.color-btn.selected { background: var(–accent-primary); color: white; border-color: var(–accent-primary); }
+.color-btn.correct { background: var(–success); color: white; border-color: var(–success); }
+.color-btn.wrong { background: var(–error); color: white; border-color: var(–error); }
 
 .color-swatch {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid rgba(0,0,0,0.1);
-  flex-shrink: 0;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+border: 2px solid rgba(0,0,0,0.1);
+flex-shrink: 0;
 }
 
 /* SCRATCH PLATE */
 .streak-area {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 20px 0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin: 20px 0;
 }
 
 .streak-plate-wrap { text-align: center; }
 
 .streak-plate-label {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  font-weight: 600;
+font-size: 13px;
+color: var(–text-secondary);
+margin-bottom: 8px;
+font-weight: 600;
 }
 
 .streak-plate {
-  width: 100%;
-  height: 180px;
-  border-radius: 12px;
-  border: 2px solid var(--border-color);
-  cursor: crosshair;
-  touch-action: none;
+width: 100%;
+height: 180px;
+border-radius: 12px;
+border: 2px solid var(–border-color);
+cursor: crosshair;
+touch-action: none;
 }
 
 .streak-plate.white-plate { background: #ffffff; }
@@ -518,966 +519,967 @@ header {
 
 /* CLIP MAGNETISM */
 .magnetism-area {
-  position: relative;
-  height: 320px;
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  overflow: hidden;
-  touch-action: none;
+position: relative;
+height: 320px;
+background: var(–bg-secondary);
+border: 2px solid var(–border-color);
+border-radius: 14px;
+overflow: hidden;
+touch-action: none;
 }
 
 /* HCL DROPPER */
 .hcl-area {
-  position: relative;
-  height: 360px;
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-accent) 100%);
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  overflow: hidden;
-  cursor: crosshair;
+position: relative;
+height: 360px;
+background: linear-gradient(180deg, var(–bg-secondary) 0%, var(–bg-accent) 100%);
+border: 2px solid var(–border-color);
+border-radius: 14px;
+overflow: hidden;
+cursor: crosshair;
 }
 
 /* MOHS SCALE */
 .mohs-scale {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 4px;
-  margin: 20px 0;
+display: grid;
+grid-template-columns: repeat(10, 1fr);
+gap: 4px;
+margin: 20px 0;
 }
 
 .mohs-item {
-  padding: 12px 4px;
-  text-align: center;
-  font-size: 11px;
-  background: var(--bg-secondary);
-  border-radius: 6px;
-  border: 2px solid var(--border-color);
-  font-weight: 600;
-  position: relative;
+padding: 12px 4px;
+text-align: center;
+font-size: 11px;
+background: var(–bg-secondary);
+border-radius: 6px;
+border: 2px solid var(–border-color);
+font-weight: 600;
+position: relative;
 }
 
 .mohs-item.has-mineral {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  border-color: var(--accent-primary);
+background: linear-gradient(135deg, var(–accent-primary), var(–accent-secondary));
+color: white;
+border-color: var(–accent-primary);
 }
 
 .mohs-num {
-  display: block;
-  font-size: 18px;
-  font-family: 'Black Han Sans', sans-serif;
-  margin-bottom: 2px;
+display: block;
+font-size: 18px;
+font-family: ‘Black Han Sans’, sans-serif;
+margin-bottom: 2px;
 }
 
 @media (max-width: 768px) { .mohs-scale { grid-template-columns: repeat(5, 1fr); } }
 
 /* QUIZ */
 .quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin: 16px 0;
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin: 16px 0;
 }
 
 .quiz-option {
-  padding: 14px 18px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 14px;
-  text-align: left;
-  transition: all 0.2s;
-  line-height: 1.5;
+padding: 14px 18px;
+border: 2px solid var(–border-color);
+background: var(–bg-card);
+border-radius: 10px;
+cursor: pointer;
+font-family: inherit;
+font-size: 14px;
+text-align: left;
+transition: all 0.2s;
+line-height: 1.5;
 }
 
-.quiz-option:hover { border-color: var(--accent-primary); transform: translateX(4px); }
-.quiz-option.selected { background: var(--accent-primary); color: white; border-color: var(--accent-primary); }
-.quiz-option.correct { background: var(--success); color: white; border-color: var(--success); }
-.quiz-option.wrong { background: var(--error); color: white; border-color: var(--error); }
+.quiz-option:hover { border-color: var(–accent-primary); transform: translateX(4px); }
+.quiz-option.selected { background: var(–accent-primary); color: white; border-color: var(–accent-primary); }
+.quiz-option.correct { background: var(–success); color: white; border-color: var(–success); }
+.quiz-option.wrong { background: var(–error); color: white; border-color: var(–error); }
 
 /* TEXTAREA */
 .text-input {
-  width: 100%;
-  padding: 14px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  color: var(--text-primary);
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 14px;
-  resize: vertical;
-  min-height: 80px;
-  transition: border-color 0.2s;
+width: 100%;
+padding: 14px;
+border: 2px solid var(–border-color);
+background: var(–bg-card);
+color: var(–text-primary);
+border-radius: 10px;
+font-family: inherit;
+font-size: 14px;
+resize: vertical;
+min-height: 80px;
+transition: border-color 0.2s;
 }
 
-.text-input:focus { outline: none; border-color: var(--accent-primary); }
+.text-input:focus { outline: none; border-color: var(–accent-primary); }
 
 /* FILL BLANK */
 .fill-blank-input {
-  display: inline-block;
-  padding: 4px 10px;
-  border: none;
-  border-bottom: 2px solid var(--accent-primary);
-  background: rgba(200,71,43,0.05);
-  color: var(--text-primary);
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 600;
-  width: 100px;
-  text-align: center;
-  margin: 0 4px;
+display: inline-block;
+padding: 4px 10px;
+border: none;
+border-bottom: 2px solid var(–accent-primary);
+background: rgba(200,71,43,0.05);
+color: var(–text-primary);
+font-family: inherit;
+font-size: 15px;
+font-weight: 600;
+width: 100px;
+text-align: center;
+margin: 0 4px;
 }
 
 .fill-blank-input:focus { outline: none; background: rgba(200,71,43,0.15); }
-.fill-blank-input.correct { border-bottom-color: var(--success); background: rgba(74,124,89,0.15); color: var(--success); }
-.fill-blank-input.wrong { border-bottom-color: var(--error); background: rgba(200,71,43,0.15); color: var(--error); }
+.fill-blank-input.correct { border-bottom-color: var(–success); background: rgba(74,124,89,0.15); color: var(–success); }
+.fill-blank-input.wrong { border-bottom-color: var(–error); background: rgba(200,71,43,0.15); color: var(–error); }
 
 /* CARD MATCHING */
 .card-match-area {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  padding: 20px;
-  margin: 16px 0;
+background: var(–bg-secondary);
+border: 2px solid var(–border-color);
+border-radius: 14px;
+padding: 20px;
+margin: 16px 0;
 }
 
 .compare-slots {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 16px 0;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin: 16px 0;
 }
 
 .compare-slot {
-  background: var(--bg-card);
-  border: 3px dashed var(--border-color);
-  border-radius: 12px;
-  padding: 16px;
-  min-height: 180px;
-  text-align: center;
-  position: relative;
+background: var(–bg-card);
+border: 3px dashed var(–border-color);
+border-radius: 12px;
+padding: 16px;
+min-height: 180px;
+text-align: center;
+position: relative;
 }
 
-.compare-slot.filled { border-style: solid; border-color: var(--accent-primary); }
+.compare-slot.filled { border-style: solid; border-color: var(–accent-primary); }
 
 .attribute-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 16px;
-  background: var(--bg-accent);
-  border-radius: 10px;
-  min-height: 80px;
-  margin: 12px 0;
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+padding: 16px;
+background: var(–bg-accent);
+border-radius: 10px;
+min-height: 80px;
+margin: 12px 0;
 }
 
 .attr-card {
-  padding: 8px 14px;
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 20px;
-  font-size: 13px;
-  cursor: grab;
-  user-select: none;
-  transition: all 0.2s;
-  font-weight: 500;
+padding: 8px 14px;
+background: var(–bg-card);
+border: 2px solid var(–border-color);
+border-radius: 20px;
+font-size: 13px;
+cursor: grab;
+user-select: none;
+transition: all 0.2s;
+font-weight: 500;
 }
 
-.attr-card:hover { border-color: var(--accent-primary); transform: translateY(-2px); }
+.attr-card:hover { border-color: var(–accent-primary); transform: translateY(-2px); }
 .attr-card.placed { opacity: 0.5; cursor: default; }
 .attr-card.dragging { opacity: 0.6; }
-.attr-card.correct { background: var(--success); color: white; border-color: var(--success); }
-.attr-card.wrong { background: var(--error); color: white; border-color: var(--error); }
+.attr-card.correct { background: var(–success); color: white; border-color: var(–success); }
+.attr-card.wrong { background: var(–error); color: white; border-color: var(–error); }
 .attr-card.shake { animation: shakeX 0.4s ease; }
 @keyframes shakeX {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-6px); }
-  40%, 80% { transform: translateX(6px); }
+0%, 100% { transform: translateX(0); }
+20%, 60% { transform: translateX(-6px); }
+40%, 80% { transform: translateX(6px); }
 }
 
 .attr-drop-zone {
-  margin-top: 12px;
-  padding: 12px;
-  background: var(--bg-secondary);
-  border-radius: 10px;
-  min-height: 60px;
-  border: 2px dashed var(--border-color);
+margin-top: 12px;
+padding: 12px;
+background: var(–bg-secondary);
+border-radius: 10px;
+min-height: 60px;
+border: 2px dashed var(–border-color);
 }
 
-.attr-drop-zone.drag-over { border-color: var(--accent-primary); background: rgba(200,71,43,0.05); }
+.attr-drop-zone.drag-over { border-color: var(–accent-primary); background: rgba(200,71,43,0.05); }
 
 .compare-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 16px 0;
-  background: var(--bg-card);
-  border-radius: 10px;
-  overflow: hidden;
+width: 100%;
+border-collapse: collapse;
+margin: 16px 0;
+background: var(–bg-card);
+border-radius: 10px;
+overflow: hidden;
 }
 
 .compare-table th, .compare-table td {
-  padding: 12px;
-  text-align: center;
-  border-bottom: 1px solid var(--border-color);
-  font-size: 14px;
+padding: 12px;
+text-align: center;
+border-bottom: 1px solid var(–border-color);
+font-size: 14px;
 }
 
 .compare-table th {
-  background: var(--accent-tertiary);
-  color: white;
-  font-weight: 600;
+background: var(–accent-tertiary);
+color: white;
+font-weight: 600;
 }
 
 .compare-table tr:last-child td { border-bottom: none; }
 
 /* RESULTS */
 .result-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
-  margin: 20px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 16px;
+margin: 20px 0;
 }
 
 .result-card {
-  background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  padding: 20px;
-  text-align: center;
+background: linear-gradient(135deg, var(–bg-card), var(–bg-secondary));
+border: 2px solid var(–border-color);
+border-radius: 14px;
+padding: 20px;
+text-align: center;
 }
 
 .result-value {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 42px;
-  color: var(--accent-primary);
-  margin: 8px 0;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 42px;
+color: var(–accent-primary);
+margin: 8px 0;
 }
 
 .result-label {
-  font-size: 13px;
-  color: var(--text-muted);
-  font-weight: 600;
+font-size: 13px;
+color: var(–text-muted);
+font-weight: 600;
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
-  padding: 32px 20px;
-  margin-top: 40px;
-  border-top: 2px solid var(--border-color);
-  color: var(--text-muted);
+text-align: center;
+padding: 32px 20px;
+margin-top: 40px;
+border-top: 2px solid var(–border-color);
+color: var(–text-muted);
 }
 
 .footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 12px;
-  flex-wrap: wrap;
+display: flex;
+justify-content: center;
+gap: 16px;
+margin-bottom: 12px;
+flex-wrap: wrap;
 }
 
 .footer-links a {
-  color: var(--accent-primary);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+color: var(–accent-primary);
+text-decoration: none;
+font-weight: 600;
+font-size: 14px;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 
 .footer-links a:hover { text-decoration: underline; }
 
 /* MODAL / FEEDBACK */
 .feedback-banner {
-  padding: 16px 20px;
-  border-radius: 12px;
-  margin: 16px 0;
-  font-size: 15px;
-  line-height: 1.6;
-  display: none;
-  animation: slideDown 0.4s ease;
+padding: 16px 20px;
+border-radius: 12px;
+margin: 16px 0;
+font-size: 15px;
+line-height: 1.6;
+display: none;
+animation: slideDown 0.4s ease;
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+from { opacity: 0; transform: translateY(-10px); }
+to { opacity: 1; transform: translateY(0); }
 }
 
 .feedback-banner.show { display: block; }
-.feedback-banner.success { background: rgba(74,124,89,0.15); border-left: 4px solid var(--success); color: var(--text-primary); }
-.feedback-banner.error { background: rgba(200,71,43,0.15); border-left: 4px solid var(--error); color: var(--text-primary); }
+.feedback-banner.success { background: rgba(74,124,89,0.15); border-left: 4px solid var(–success); color: var(–text-primary); }
+.feedback-banner.error { background: rgba(200,71,43,0.15); border-left: 4px solid var(–error); color: var(–text-primary); }
 
 /* CONFETTI */
 .confetti-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 9999;
 }
 
 /* BADGE */
 .badge {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  border-radius: 30px;
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 18px;
-  margin: 12px 0;
-  box-shadow: var(--shadow-lg);
-  animation: pulse 2s infinite;
+display: inline-block;
+padding: 12px 24px;
+background: linear-gradient(135deg, var(–accent-primary), var(–accent-secondary));
+color: white;
+border-radius: 30px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 18px;
+margin: 12px 0;
+box-shadow: var(–shadow-lg);
+animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
 }
 
 /* FLOWCHART INFOGRAPHIC */
 .flowchart-svg {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  overflow: visible;
+width: 100%;
+max-width: 900px;
+height: auto;
+margin: 20px auto;
+display: block;
+overflow: visible;
 }
 .flowchart-svg-wrapper {
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+width: 100%;
+overflow-x: auto;
+-webkit-overflow-scrolling: touch;
 }
 .flowchart-svg-wrapper .flowchart-svg { min-width: 720px; }
 
 /* AI RECOMMENDATION */
 .ai-rec-section {
-  background: linear-gradient(135deg, rgba(74,124,89,0.08), rgba(212,160,76,0.05));
-  border: 2px solid var(--accent-tertiary);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 20px 0;
+background: linear-gradient(135deg, rgba(74,124,89,0.08), rgba(212,160,76,0.05));
+border: 2px solid var(–accent-tertiary);
+border-radius: 16px;
+padding: 24px;
+margin: 20px 0;
 }
 
 .ai-rec-title {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 22px;
-  color: var(--accent-tertiary);
-  margin-bottom: 16px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 22px;
+color: var(–accent-tertiary);
+margin-bottom: 16px;
 }
 
 .ai-rec-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 14px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 14px;
 }
 
 .ai-rec-item {
-  background: var(--bg-card);
-  border-radius: 10px;
-  padding: 14px;
-  border: 1px solid var(--border-color);
+background: var(–bg-card);
+border-radius: 10px;
+padding: 14px;
+border: 1px solid var(–border-color);
 }
 
 .ai-rec-item h4 {
-  font-size: 14px;
-  color: var(--accent-primary);
-  margin-bottom: 6px;
+font-size: 14px;
+color: var(–accent-primary);
+margin-bottom: 6px;
 }
 
 .ai-rec-item p {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
+font-size: 13px;
+color: var(–text-secondary);
+line-height: 1.5;
 }
 
 /* NAVIGATION */
 .stage-nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 24px;
-  flex-wrap: wrap;
+display: flex;
+justify-content: space-between;
+gap: 12px;
+margin-top: 24px;
+flex-wrap: wrap;
 }
 
 .observation-log {
-  background: linear-gradient(135deg, rgba(74,124,89,0.05), transparent);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  padding: 14px;
-  margin: 12px 0;
-  font-size: 13px;
+background: linear-gradient(135deg, rgba(74,124,89,0.05), transparent);
+border: 1px solid var(–border-color);
+border-radius: 10px;
+padding: 14px;
+margin: 12px 0;
+font-size: 13px;
 }
 
 .observation-log h4 {
-  font-size: 13px;
-  color: var(--accent-tertiary);
-  margin-bottom: 8px;
-  font-weight: 700;
+font-size: 13px;
+color: var(–accent-tertiary);
+margin-bottom: 8px;
+font-weight: 700;
 }
 
 .log-entry {
-  padding: 4px 0;
-  color: var(--text-secondary);
+padding: 4px 0;
+color: var(–text-secondary);
 }
 
-.log-entry strong { color: var(--text-primary); }
+.log-entry strong { color: var(–text-primary); }
 
 /* HINT */
 .hint-box {
-  background: rgba(212,160,76,0.1);
-  border: 1px dashed var(--accent-secondary);
-  border-radius: 10px;
-  padding: 14px;
-  margin: 12px 0;
-  font-size: 13px;
-  display: none;
+background: rgba(212,160,76,0.1);
+border: 1px dashed var(–accent-secondary);
+border-radius: 10px;
+padding: 14px;
+margin: 12px 0;
+font-size: 13px;
+display: none;
 }
 
 .hint-box.show { display: block; animation: fadeIn 0.3s; }
 
 /* 자성/염산 단계 레이아웃 */
 .mag-layout, .hcl-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 24px;
+display: grid;
+grid-template-columns: 1fr 2fr;
+gap: 24px;
 }
 
 /* 굳기 단계 - 드래그 실험 */
 .hardness-exp {
-  margin: 24px 0;
-  padding: 20px;
-  background: var(--bg-secondary);
-  border-radius: 14px;
-  border: 2px solid var(--border-color);
-  transition: opacity 0.4s;
+margin: 24px 0;
+padding: 20px;
+background: var(–bg-secondary);
+border-radius: 14px;
+border: 2px solid var(–border-color);
+transition: opacity 0.4s;
 }
 .hardness-exp-title {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 18px;
-  margin-bottom: 8px;
-  color: var(--text-primary);
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 18px;
+margin-bottom: 8px;
+color: var(–text-primary);
 }
 .hardness-exp-hint {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 14px;
+font-size: 13px;
+color: var(–text-muted);
+margin-bottom: 14px;
 }
 .hardness-bench {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 18px;
-  align-items: center;
+display: grid;
+grid-template-columns: 2fr 1fr;
+gap: 18px;
+align-items: center;
 }
 .hardness-target {
-  position: relative;
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  min-height: 280px;
+position: relative;
+background: var(–bg-card);
+border: 2px solid var(–border-color);
+border-radius: 12px;
+padding: 20px;
+text-align: center;
+transition: border-color 0.2s, box-shadow 0.2s;
+min-height: 280px;
 }
 .hardness-target.hover-tool {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 4px rgba(200,71,43,0.15);
+border-color: var(–accent-primary);
+box-shadow: 0 0 0 4px rgba(200,71,43,0.15);
 }
 .hardness-target-label {
-  font-weight: 700;
-  color: var(--text-primary);
-  font-size: 16px;
-  margin-bottom: 12px;
+font-weight: 700;
+color: var(–text-primary);
+font-size: 16px;
+margin-bottom: 12px;
 }
 .hardness-target-mineral {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 10px;
-  display: block;
-  position: relative;
-  z-index: 1;
+width: 200px;
+height: 200px;
+margin: 0 auto 10px;
+display: block;
+position: relative;
+z-index: 1;
 }
 .hardness-target-mineral svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+width: 100%;
+height: 100%;
+display: block;
 }
 .hardness-canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  border-radius: 12px;
-  z-index: 2;
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+border-radius: 12px;
+z-index: 2;
 }
 .hardness-tool-zone {
-  text-align: center;
-  padding: 12px;
+text-align: center;
+padding: 12px;
 }
 .hardness-tool-hint {
-  font-size: 13px;
-  color: var(--accent-primary);
-  font-weight: 700;
-  margin-bottom: 10px;
-  animation: pulseLabel 1.6s ease-in-out infinite;
+font-size: 13px;
+color: var(–accent-primary);
+font-weight: 700;
+margin-bottom: 10px;
+animation: pulseLabel 1.6s ease-in-out infinite;
 }
 .hardness-tool {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto;
-  cursor: grab;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.18));
-  transition: transform 0.15s, filter 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: none;
-  position: relative;
+width: 160px;
+height: 160px;
+margin: 0 auto;
+cursor: grab;
+filter: drop-shadow(0 4px 8px rgba(0,0,0,0.18));
+transition: transform 0.15s, filter 0.15s;
+user-select: none;
+-webkit-user-select: none;
+touch-action: none;
+position: relative;
 }
 .hardness-tool:hover {
-  transform: scale(1.06) translateY(-2px);
-  filter: drop-shadow(0 8px 16px rgba(200,71,43,0.35));
+transform: scale(1.06) translateY(-2px);
+filter: drop-shadow(0 8px 16px rgba(200,71,43,0.35));
 }
 .hardness-tool.dragging {
-  cursor: grabbing;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
-  opacity: 0.92;
-  pointer-events: none;
-  transform: scale(1.15);
+cursor: grabbing;
+filter: drop-shadow(0 12px 28px rgba(0,0,0,0.45));
+opacity: 0.92;
+pointer-events: none;
+transform: scale(1.15);
 }
 .hardness-tool svg { width: 100%; height: 100%; display: block; }
 .hardness-tool-info {
-  font-size: 14px;
-  color: var(--text-secondary);
-  font-weight: 600;
-  margin-top: 10px;
+font-size: 14px;
+color: var(–text-secondary);
+font-weight: 600;
+margin-top: 10px;
 }
 .hardness-tool-warning {
-  font-size: 12px;
-  color: var(--error);
-  font-weight: 700;
-  margin-top: 6px;
-  display: none;
+font-size: 12px;
+color: var(–error);
+font-weight: 700;
+margin-top: 6px;
+display: none;
 }
 .hardness-tool-warning.show { display: block; animation: shake 0.4s; }
 
 /* 스포이트 squeeze 애니메이션 */
 .hcl-dropper {
-  cursor: pointer;
-  transition: transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
+cursor: pointer;
+transition: transform 0.15s;
+user-select: none;
+-webkit-user-select: none;
 }
 .hcl-dropper:hover {
-  transform: translateX(-50%) translateY(-2px);
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+transform: translateX(-50%) translateY(-2px);
+filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
 }
 .hcl-dropper:active, .hcl-dropper.squeezing {
-  transform: translateX(-50%) scale(0.95);
+transform: translateX(-50%) scale(0.95);
 }
 .hcl-dropper svg ellipse:nth-of-type(2) {
-  transform-origin: center;
-  transition: transform 0.2s;
+transform-origin: center;
+transition: transform 0.2s;
 }
 .hcl-dropper.squeezing svg > ellipse { transform: scaleY(0.7); }
 .dropper-pulse {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  pointer-events: none;
-  animation: dropperPulse 2s ease-in-out infinite;
+position: absolute;
+inset: 0;
+border-radius: 50%;
+pointer-events: none;
+animation: dropperPulse 2s ease-in-out infinite;
 }
 @keyframes dropperPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(140,200,235,0); }
-  50% { box-shadow: 0 0 0 12px rgba(140,200,235,0); }
+0%, 100% { box-shadow: 0 0 0 0 rgba(140,200,235,0); }
+50% { box-shadow: 0 0 0 12px rgba(140,200,235,0); }
 }
 
 /* === 모바일 사용성 종합 개선 === */
 @media (max-width: 768px) {
-  .mag-layout, .hcl-layout {
-    grid-template-columns: 1fr;
-  }
-  .hardness-bench {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .obs-container {
-    grid-template-columns: 1fr;
-  }
+.mag-layout, .hcl-layout {
+grid-template-columns: 1fr;
+}
+.hardness-bench {
+grid-template-columns: 1fr;
+gap: 16px;
+}
+.obs-container {
+grid-template-columns: 1fr;
+}
 }
 
 @media (max-width: 600px) {
-  .container { padding: 10px; }
-  .stage-card { padding: 16px; border-radius: 14px; }
-  .stage-title { font-size: 20px; gap: 8px; }
-  .stage-number { font-size: 12px; padding: 3px 10px; }
-  .stage-subtitle { font-size: 13px; }
-  .brand-text h1 { font-size: 18px; }
-  .brand-text p { font-size: 11px; }
-  .brand-icon { width: 42px; height: 42px; font-size: 22px; }
+.container { padding: 10px; }
+.stage-card { padding: 16px; border-radius: 14px; }
+.stage-title { font-size: 20px; gap: 8px; }
+.stage-number { font-size: 12px; padding: 3px 10px; }
+.stage-subtitle { font-size: 13px; }
+.brand-text h1 { font-size: 18px; }
+.brand-text p { font-size: 11px; }
+.brand-icon { width: 42px; height: 42px; font-size: 22px; }
 
-  /* 헤더 컨트롤 압축 */
-  header { padding: 12px 0; gap: 8px; }
-  .header-controls { gap: 6px; flex-wrap: wrap; }
-  .btn { padding: 8px 12px; font-size: 13px; min-height: 40px; }
+/* 헤더 컨트롤 압축 */
+header { padding: 12px 0; gap: 8px; }
+.header-controls { gap: 6px; flex-wrap: wrap; }
+.btn { padding: 8px 12px; font-size: 13px; min-height: 40px; }
 
-  /* 진행 단계 pill */
-  .progress-container { padding: 12px; }
-  .step-pill { font-size: 10px; padding: 6px 4px; min-width: 50px; }
-  .progress-header { font-size: 11px; }
+/* 진행 단계 pill */
+.progress-container { padding: 12px; }
+.step-pill { font-size: 10px; padding: 6px 4px; min-width: 50px; }
+.progress-header { font-size: 11px; }
 
-  /* 광물 트레이 */
-  .mineral-tray { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
-  .mineral-card { padding: 10px; }
-  .mineral-svg { height: 80px; }
-  .mineral-name { font-size: 14px; }
-  .mineral-formula { font-size: 10px; }
+/* 광물 트레이 */
+.mineral-tray { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; }
+.mineral-card { padding: 10px; }
+.mineral-svg { height: 80px; }
+.mineral-name { font-size: 14px; }
+.mineral-formula { font-size: 10px; }
 
-  /* 조흔판 - 모바일에서 세로 배치 */
-  .streak-area { grid-template-columns: 1fr; gap: 10px; }
-  .streak-plate { height: 130px; }
+/* 조흔판 - 모바일에서 세로 배치 */
+.streak-area { grid-template-columns: 1fr; gap: 10px; }
+.streak-plate { height: 130px; }
 
-  /* 색상 옵션 */
-  .color-options { grid-template-columns: 1fr; }
-  .color-btn { padding: 10px; font-size: 12px; min-height: 44px; }
+/* 색상 옵션 */
+.color-options { grid-template-columns: 1fr; }
+.color-btn { padding: 10px; font-size: 12px; min-height: 44px; }
 
-  /* 자성·염산 영역 */
-  .magnetism-area { height: 250px; }
-  .hcl-area { height: 280px; }
+/* 자성·염산 영역 */
+.magnetism-area { height: 250px; }
+.hcl-area { height: 280px; }
 
-  /* 굳기 모스 스케일 */
-  .mohs-scale { grid-template-columns: repeat(5, 1fr); gap: 3px; }
-  .mohs-item { padding: 8px 2px; font-size: 9px; }
-  .mohs-num { font-size: 14px; }
+/* 굳기 모스 스케일 */
+.mohs-scale { grid-template-columns: repeat(5, 1fr); gap: 3px; }
+.mohs-item { padding: 8px 2px; font-size: 9px; }
+.mohs-num { font-size: 14px; }
 
-  /* 카드 매칭 */
-  .compare-slots { grid-template-columns: 1fr; gap: 12px; }
-  .attr-card { font-size: 11px; padding: 6px 10px; }
-  .compare-table th, .compare-table td { padding: 8px 4px; font-size: 12px; }
+/* 카드 매칭 */
+.compare-slots { grid-template-columns: 1fr; gap: 12px; }
+.attr-card { font-size: 11px; padding: 6px 10px; }
+.compare-table th, .compare-table td { padding: 8px 4px; font-size: 12px; }
 
-  /* 결과 보고서 */
-  .result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .result-card { padding: 14px; }
-  .result-value { font-size: 28px; }
-  .result-label { font-size: 11px; }
+/* 결과 보고서 */
+.result-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.result-card { padding: 14px; }
+.result-value { font-size: 28px; }
+.result-label { font-size: 11px; }
 
-  /* 정리 활동 */
-  .ai-rec-grid { grid-template-columns: 1fr; }
-  .pair-tab { font-size: 11px !important; padding: 6px 10px !important; }
+/* 정리 활동 */
+.ai-rec-grid { grid-template-columns: 1fr; }
+.pair-tab { font-size: 11px !important; padding: 6px 10px !important; }
 
-  /* stage-nav 버튼들 */
-  .stage-nav { flex-direction: column; gap: 8px; }
-  .stage-nav > * { width: 100%; }
-  .stage-nav > div { display: flex; gap: 8px; }
-  .stage-nav > div > button { flex: 1; }
+/* stage-nav 버튼들 */
+.stage-nav { flex-direction: column; gap: 8px; }
+.stage-nav > * { width: 100%; }
+.stage-nav > div { display: flex; gap: 8px; }
+.stage-nav > div > button { flex: 1; }
 
-  /* 굳기 실험 */
-  .hardness-target { min-height: 230px; padding: 14px; }
-  .hardness-target-mineral { width: 150px; height: 150px; }
-  .hardness-tool { width: 120px; height: 120px; }
+/* 굳기 실험 */
+.hardness-target { min-height: 230px; padding: 14px; }
+.hardness-target-mineral { width: 150px; height: 150px; }
+.hardness-tool { width: 120px; height: 120px; }
 
-  /* 갤러리 */
-  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .photo-gallery-header { padding: 14px 16px; }
-  .photo-gallery-header h2 { font-size: 16px; }
-  .photo-gallery-body { padding: 14px; }
-  .photo-item-name { font-size: 14px; }
-  .photo-item-formula { font-size: 10px; }
-  .photo-lightbox-nav { width: 36px; height: 36px; font-size: 16px; }
-  .photo-lightbox-nav.prev { left: 6px; }
-  .photo-lightbox-nav.next { right: 6px; }
-  .photo-lightbox-caption { font-size: 16px; }
+/* 갤러리 */
+.photo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.photo-gallery-header { padding: 14px 16px; }
+.photo-gallery-header h2 { font-size: 16px; }
+.photo-gallery-body { padding: 14px; }
+.photo-item-name { font-size: 14px; }
+.photo-item-formula { font-size: 10px; }
+.photo-lightbox-nav { width: 36px; height: 36px; font-size: 16px; }
+.photo-lightbox-nav.prev { left: 6px; }
+.photo-lightbox-nav.next { right: 6px; }
+.photo-lightbox-caption { font-size: 16px; }
 
-  /* 안전 체크리스트 */
-  .safety-list { padding: 14px; }
-  .safety-item { padding: 10px; font-size: 13px; gap: 10px; }
-  .safety-checkbox { width: 22px; height: 22px; }
+/* 안전 체크리스트 */
+.safety-list { padding: 14px; }
+.safety-item { padding: 10px; font-size: 13px; gap: 10px; }
+.safety-checkbox { width: 22px; height: 22px; }
 
-  /* 정보 박스 */
-  .info-box { padding: 12px 14px; font-size: 13px; }
+/* 정보 박스 */
+.info-box { padding: 12px 14px; font-size: 13px; }
 
-  /* 피드백 배너 */
-  .feedback-banner { padding: 12px 14px; font-size: 13px; }
+/* 피드백 배너 */
+.feedback-banner { padding: 12px 14px; font-size: 13px; }
 
-  /* 퀴즈 옵션 */
-  .quiz-option { padding: 12px 14px; font-size: 12px; line-height: 1.4; }
+/* 퀴즈 옵션 */
+.quiz-option { padding: 12px 14px; font-size: 12px; line-height: 1.4; }
 
-  /* 모스 스케일 다시 (작은 화면에서 텍스트 가독성) */
-  .mohs-item small { font-size: 8px; }
+/* 모스 스케일 다시 (작은 화면에서 텍스트 가독성) */
+.mohs-item small { font-size: 8px; }
 
-  /* 빈칸 채우기 input */
-  .fill-blank-input { width: 80px; font-size: 13px; }
+/* 빈칸 채우기 input */
+.fill-blank-input { width: 80px; font-size: 13px; }
 }
 
 /* 작은 모바일 (~380px) */
 @media (max-width: 400px) {
-  .step-pill { font-size: 9px; min-width: 42px; }
-  .btn { padding: 6px 10px; font-size: 12px; }
-  .mineral-tray { grid-template-columns: repeat(2, 1fr); }
-  .photo-grid { grid-template-columns: 1fr 1fr; }
+.step-pill { font-size: 9px; min-width: 42px; }
+.btn { padding: 6px 10px; font-size: 12px; }
+.mineral-tray { grid-template-columns: repeat(2, 1fr); }
+.photo-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* PHOTO GALLERY MODAL */
 .photo-gallery-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.78);
-  z-index: 10000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  animation: fadeInOverlay 0.25s ease;
-  backdrop-filter: blur(4px);
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.78);
+z-index: 10000;
+display: none;
+align-items: center;
+justify-content: center;
+padding: 20px;
+animation: fadeInOverlay 0.25s ease;
+backdrop-filter: blur(4px);
 }
 
 .photo-gallery-overlay.show { display: flex; }
 
 @keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to { opacity: 1; }
+from { opacity: 0; }
+to { opacity: 1; }
 }
 
 .photo-gallery-modal {
-  background: var(--bg-card);
-  border-radius: 20px;
-  max-width: 1200px;
-  width: 100%;
-  max-height: 92vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+background: var(–bg-card);
+border-radius: 20px;
+max-width: 1200px;
+width: 100%;
+max-height: 92vh;
+overflow-y: auto;
+position: relative;
+box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes slideUp {
-  from { transform: translateY(30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+from { transform: translateY(30px); opacity: 0; }
+to { transform: translateY(0); opacity: 1; }
 }
 
 .photo-gallery-header {
-  position: sticky;
-  top: 0;
-  background: var(--bg-card);
-  padding: 20px 28px;
-  border-bottom: 2px solid var(--border-color);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 10;
-  border-radius: 20px 20px 0 0;
+position: sticky;
+top: 0;
+background: var(–bg-card);
+padding: 20px 28px;
+border-bottom: 2px solid var(–border-color);
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 10;
+border-radius: 20px 20px 0 0;
 }
 
 .photo-gallery-header h2 {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 24px;
-  color: var(--text-primary);
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 24px;
+color: var(–text-primary);
+font-weight: 400;
+display: flex;
+align-items: center;
+gap: 10px;
 }
 
 .photo-gallery-close {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--border-color);
-  background: var(--bg-card);
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+border: 2px solid var(–border-color);
+background: var(–bg-card);
+cursor: pointer;
+font-size: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
 }
 
 .photo-gallery-close:hover {
-  background: var(--accent-primary);
-  color: white;
-  border-color: var(--accent-primary);
-  transform: rotate(90deg);
+background: var(–accent-primary);
+color: white;
+border-color: var(–accent-primary);
+transform: rotate(90deg);
 }
 
 .photo-gallery-body { padding: 24px 28px; }
 
 .photo-gallery-intro {
-  background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(200,71,43,0.05));
-  border-left: 4px solid var(--accent-secondary);
-  padding: 14px 18px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
+background: linear-gradient(135deg, rgba(212,160,76,0.1), rgba(200,71,43,0.05));
+border-left: 4px solid var(–accent-secondary);
+padding: 14px 18px;
+border-radius: 8px;
+margin-bottom: 20px;
+font-size: 14px;
+color: var(–text-secondary);
+line-height: 1.6;
 }
 
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-  gap: 16px;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+gap: 16px;
 }
 
 .photo-item {
-  background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: 14px;
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.25s;
-  position: relative;
-  overflow: hidden;
+background: var(–bg-secondary);
+border: 2px solid var(–border-color);
+border-radius: 14px;
+padding: 12px;
+text-align: center;
+cursor: pointer;
+transition: all 0.25s;
+position: relative;
+overflow: hidden;
 }
 
 .photo-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-primary);
-  box-shadow: var(--shadow-lg);
+transform: translateY(-4px);
+border-color: var(–accent-primary);
+box-shadow: var(–shadow-lg);
 }
 
 .photo-item-img-wrap {
-  width: 100%;
-  aspect-ratio: 1/1;
-  background: linear-gradient(180deg, #f8f5ee, #e8e0c8);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+width: 100%;
+aspect-ratio: 1/1;
+background: linear-gradient(180deg, #f8f5ee, #e8e0c8);
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-[data-theme="dark"] .photo-item-img-wrap {
-  background: linear-gradient(180deg, #2a2520, #1a1612);
+[data-theme=“dark”] .photo-item-img-wrap {
+background: linear-gradient(180deg, #2a2520, #1a1612);
 }
 
 .photo-item-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.3s;
-  padding: 4px;
+width: 100%;
+height: 100%;
+object-fit: contain;
+object-position: center;
+transition: transform 0.3s;
+padding: 4px;
 }
 
 .photo-item:hover .photo-item-img-wrap img { transform: scale(1.06); }
 
 .photo-item-name {
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 18px;
-  color: var(--text-primary);
-  margin-bottom: 2px;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 18px;
+color: var(–text-primary);
+margin-bottom: 2px;
 }
 
 .photo-item-formula {
-  font-size: 12px;
-  color: var(--text-muted);
+font-size: 12px;
+color: var(–text-muted);
 }
 
 .photo-item-zoom-hint {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  padding: 4px 10px;
-  border-radius: 14px;
-  font-size: 11px;
-  opacity: 0;
-  transition: opacity 0.2s;
+position: absolute;
+top: 18px;
+right: 18px;
+background: rgba(0,0,0,0.6);
+color: white;
+padding: 4px 10px;
+border-radius: 14px;
+font-size: 11px;
+opacity: 0;
+transition: opacity 0.2s;
 }
 
 .photo-item:hover .photo-item-zoom-hint { opacity: 1; }
 
 /* PHOTO LIGHTBOX (zoom) */
 .photo-lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 10001;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  cursor: zoom-out;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.92);
+z-index: 10001;
+display: none;
+align-items: center;
+justify-content: center;
+padding: 20px;
+cursor: zoom-out;
 }
 
 .photo-lightbox.show { display: flex; animation: fadeInOverlay 0.2s ease; }
 
 .photo-lightbox-content {
-  max-width: 90vw;
-  max-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+max-width: 90vw;
+max-height: 88vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 14px;
 }
 
 .photo-lightbox-content img {
-  max-width: 100%;
-  max-height: 78vh;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+max-width: 100%;
+max-height: 78vh;
+border-radius: 12px;
+box-shadow: 0 12px 40px rgba(0,0,0,0.6);
 }
 
 .photo-lightbox-caption {
-  color: white;
-  font-family: 'Black Han Sans', sans-serif;
-  font-size: 22px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+color: white;
+font-family: ‘Black Han Sans’, sans-serif;
+font-size: 22px;
+text-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .photo-lightbox-caption span {
-  font-family: 'Gowun Dodum', sans-serif;
-  font-size: 14px;
-  opacity: 0.85;
-  margin-left: 10px;
+font-family: ‘Gowun Dodum’, sans-serif;
+font-size: 14px;
+opacity: 0.85;
+margin-left: 10px;
 }
 
 .photo-lightbox-nav {
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.4);
-  background: rgba(0,0,0,0.4);
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
+position: absolute;
+top: 50%;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: 2px solid rgba(255,255,255,0.4);
+background: rgba(0,0,0,0.4);
+color: white;
+font-size: 24px;
+cursor: pointer;
+transform: translateY(-50%);
+display: flex;
+align-items: center;
+justify-content: center;
+transition: all 0.2s;
 }
 
 .photo-lightbox-nav:hover {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
+background: var(–accent-primary);
+border-color: var(–accent-primary);
 }
 
 .photo-lightbox-nav.prev { left: 24px; }
 .photo-lightbox-nav.next { right: 24px; }
 
 @media (max-width: 600px) {
-  .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .photo-gallery-header h2 { font-size: 18px; }
-  .photo-gallery-body { padding: 16px; }
-  .photo-lightbox-nav { width: 40px; height: 40px; font-size: 18px; }
-  .photo-lightbox-nav.prev { left: 8px; }
-  .photo-lightbox-nav.next { right: 8px; }
+.photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.photo-gallery-header h2 { font-size: 18px; }
+.photo-gallery-body { padding: 16px; }
+.photo-lightbox-nav { width: 40px; height: 40px; font-size: 18px; }
+.photo-lightbox-nav.prev { left: 8px; }
+.photo-lightbox-nav.next { right: 8px; }
 }
 </style>
+
 </head>
 <body>
 
@@ -1486,6 +1488,7 @@ footer {
 <div class="container">
 
   <!-- HEADER -->
+
   <header>
     <div class="brand">
       <div class="brand-icon">🪨</div>
@@ -1502,6 +1505,7 @@ footer {
   </header>
 
   <!-- PROGRESS -->
+
   <div class="progress-container">
     <div class="progress-header">
       <span id="progressLabel">진행 단계</span>
@@ -1511,9 +1515,11 @@ footer {
   </div>
 
   <!-- STAGES -->
+
   <main id="stagesContainer"></main>
 
   <!-- PHOTO GALLERY MODAL -->
+
   <div class="photo-gallery-overlay" id="photoGalleryOverlay" role="dialog" aria-labelledby="photoGalleryTitle" aria-modal="true">
     <div class="photo-gallery-modal" role="document">
       <div class="photo-gallery-header">
@@ -1530,6 +1536,7 @@ footer {
   </div>
 
   <!-- PHOTO LIGHTBOX -->
+
   <div class="photo-lightbox" id="photoLightbox" role="dialog" aria-modal="true">
     <button class="photo-lightbox-nav prev" id="lightboxPrev" aria-label="이전 사진">◀</button>
     <div class="photo-lightbox-content">
@@ -2476,7 +2483,13 @@ function buildStage2() {
     optsDiv.innerHTML = '';
     const fb = stage.querySelector('#bodyColorFeedback');
     fb.classList.remove('show', 'success', 'error');
-    m.bodyColorOptions.forEach((opt, i) => {
+    // 정답이 항상 첫 번째에 있어 패턴이 학습되지 않도록 옵션 순서를 셔플
+    const shuffledOpts = [...m.bodyColorOptions];
+    for (let k = shuffledOpts.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [shuffledOpts[k], shuffledOpts[j]] = [shuffledOpts[j], shuffledOpts[k]];
+    }
+    shuffledOpts.forEach((opt, i) => {
       const btn = document.createElement('button');
       btn.className = 'color-btn';
       btn.innerHTML = `<span class="color-swatch" style="background:${opt.color}"></span>${opt.label}`;
@@ -2492,9 +2505,9 @@ function buildStage2() {
           setTimeout(() => playSound('success'), 100);
         } else {
           btn.classList.add('wrong');
-          const correctOpt = m.bodyColorOptions.find(o => o.correct);
+          const correctOpt = shuffledOpts.find(o => o.correct);
           optsDiv.querySelectorAll('.color-btn').forEach((b, idx) => {
-            if (m.bodyColorOptions[idx].correct) b.classList.add('correct');
+            if (shuffledOpts[idx].correct) b.classList.add('correct');
           });
           fb.classList.add('show', 'error');
           fb.innerHTML = `🔍 <strong>다시 보세요.</strong> ${m.name}의 겉보기 색은 <strong>${correctOpt.label}</strong>입니다.`;
@@ -2854,7 +2867,13 @@ function buildStage3() {
     }
     const optsDiv = stage.querySelector('#streakColorOpts');
     optsDiv.innerHTML = '';
-    m.streakColorOptions.forEach(opt => {
+    // 정답이 항상 첫 번째에 있어 패턴이 학습되지 않도록 옵션 순서를 셔플
+    const shuffledOpts = [...m.streakColorOptions];
+    for (let k = shuffledOpts.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [shuffledOpts[k], shuffledOpts[j]] = [shuffledOpts[j], shuffledOpts[k]];
+    }
+    shuffledOpts.forEach(opt => {
       const btn = document.createElement('button');
       btn.className = 'color-btn';
       btn.innerHTML = `<span class="color-swatch" style="background:${opt.color}"></span>${opt.label}`;
@@ -2874,9 +2893,9 @@ function buildStage3() {
           }
         } else {
           btn.classList.add('wrong');
-          const correctOpt = m.streakColorOptions.find(o => o.correct);
+          const correctOpt = shuffledOpts.find(o => o.correct);
           optsDiv.querySelectorAll('.color-btn').forEach((b, idx) => {
-            if (m.streakColorOptions[idx].correct) b.classList.add('correct');
+            if (shuffledOpts[idx].correct) b.classList.add('correct');
           });
           fb.classList.add('show','error');
           fb.innerHTML = `🔍 ${m.name}의 조흔색은 <strong>${correctOpt.label}</strong>입니다.`;
@@ -3803,901 +3822,932 @@ function buildStage7() {
         <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:12px;">📝 정리 활동 1</h3>
         <p style="font-size:15px; margin-bottom:12px;"><strong>석영을 조흔판에 긁었을 때 조흔색이 나타나지 않는 이유는 무엇일까요?</strong></p>
         <textarea class="text-input" id="activity1Text" placeholder="자유롭게 서술해보세요..."></textarea>
-        <div style="display:flex; gap:8px; margin-top:10px;">
-          <button class="btn" id="a1HintBtn">💡 힌트 보기</button>
-          <button class="btn btn-primary" id="a1SubmitBtn">제출</button>
-        </div>
-        <div class="hint-box" id="a1Hint">
-          <p style="margin-bottom:10px;"><strong>아래 보기에서 골라봐도 좋아요:</strong></p>
-          <div class="quiz-options" id="a1Options">
-            <button class="quiz-option" data-correct="true">① 석영의 굳기(7)가 조흔판의 굳기(6.5)보다 크기 때문이다</button>
-            <button class="quiz-option" data-correct="false">② 석영이 투명해서 색이 보이지 않기 때문이다</button>
-            <button class="quiz-option" data-correct="false">③ 조흔판이 너무 부드럽기 때문이다</button>
-            <button class="quiz-option" data-correct="false">④ 석영이 화학적으로 안정하기 때문이다</button>
-          </div>
-        </div>
-        <div class="feedback-banner" id="a1Fb"></div>
-      </div>
 
-      <!-- 활동 2: 석영 vs 방해석 구별 방법 -->
-      <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
-        <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:12px;">📝 정리 활동 2</h3>
-        <p style="font-size:15px; margin-bottom:12px;"><strong>석영과 방해석을 구별할 수 있는 방법을 모두 골라봅시다. (다중 선택 가능)</strong></p>
-        <div id="a2Options" style="display:flex; flex-direction:column; gap:10px;"></div>
-        <button class="btn btn-primary" id="a2SubmitBtn" style="margin-top:12px;">정답 확인</button>
-        <div class="feedback-banner" id="a2Fb"></div>
-      </div>
-
-      <!-- 활동 3: 카드 옮기기 -->
-      <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
-        <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:8px;">📝 정리 활동 3</h3>
-        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">두 광물의 특성을 비교해봅시다. <strong>3쌍의 비교 광물</strong>이 준비되어 있어요. 특성 카드를 알맞은 광물 칸에 드래그하세요!</p>
-        <div id="pairTabs" style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;">
-          <button class="btn pair-tab active" data-pair="0">자철석 vs 적철석</button>
-          <button class="btn pair-tab" data-pair="1">황철석 vs 황동석</button>
-          <button class="btn pair-tab" data-pair="2">석영 vs 방해석</button>
-        </div>
-        <div class="card-match-area" id="cardMatchArea"></div>
-      </div>
-
-      <!-- 활동 4: 플로우차트 + 빈칸 채우기 -->
-      <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
-        <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:8px;">📝 정리 활동 4</h3>
-        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">광물 구별 플로우차트를 보고 핵심 내용 빈칸을 채워봅시다. 🧭</p>
-        <div id="flowchartContainer"></div>
-        <div id="fillBlankSection" style="margin-top:20px; padding:16px; background:var(--bg-card); border-radius:12px; border:1px solid var(--border-color); line-height:2;">
-          <p>광물을 구별할 때는 다음과 같은 특성을 활용합니다.</p>
-          <p>① <input type="text" class="fill-blank-input" data-blank="0" data-answer="조흔색"> : 광물 가루의 색으로, 겉보기 색이 비슷한 광물을 구별할 때 유용하다. (예: 자철석과 적철석)</p>
-          <p>② <input type="text" class="fill-blank-input" data-blank="1" data-answer="염산 반응"> : 묽은 염산과 반응하여 거품이 발생하는 광물은 방해석이다.</p>
-          <p>③ <input type="text" class="fill-blank-input" data-blank="2" data-answer="자성"> : 클립이 달라붙는 강한 자성을 가진 광물은 자철석이다.</p>
-          <p>④ <input type="text" class="fill-blank-input" data-blank="3" data-answer="굳기"> : 광물이 다른 물질에 의해 긁히는 데 대한 저항의 정도로, 모스 굳기계로 비교한다.</p>
-          <p style="margin-top:10px;"><strong>▶ 결론:</strong> ⑤ <input type="text" class="fill-blank-input" data-blank="4" data-answer="겉보기 색">은(는) 광물 구별의 주요 특성 중 하나이지만, 비슷한 색의 광물(예: 황철석과 황동석, 자철석과 적철석)은 이것만으로 구별하기 어렵다. 따라서 조흔색·자성·염산 반응·굳기 등 광물마다 다른 ⑥ <input type="text" class="fill-blank-input" data-blank="5" data-answer="고유한"> 특성을 함께 활용하여 구별해야 한다.</p>
-        </div>
-        <button class="btn btn-primary" id="a4SubmitBtn" style="margin-top:14px;">정답 확인</button>
-        <div class="feedback-banner" id="a4Fb"></div>
-      </div>
-
-      <div class="stage-nav">
-        <button class="btn" onclick="goToStage(6)">← 이전</button>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <button class="btn btn-skip" onclick="skipStage(7)">⤼ 건너뛰기</button>
-          <button class="btn btn-primary" id="toStage8">결과 보고서 보기 →</button>
-        </div>
+```
+    <div style="display:flex; gap:8px; margin-top:10px;">
+      <button class="btn" id="a1HintBtn">💡 힌트 보기</button>
+      <button class="btn btn-primary" id="a1SubmitBtn">제출</button>
+    </div>
+    <div class="hint-box" id="a1Hint">
+      <p style="margin-bottom:10px;"><strong>아래 보기에서 골라봐도 좋아요:</strong></p>
+      <div class="quiz-options" id="a1Options">
+        <button class="quiz-option" data-correct="true">① 석영의 굳기(7)가 조흔판의 굳기(6.5)보다 크기 때문이다</button>
+        <button class="quiz-option" data-correct="false">② 석영이 투명해서 색이 보이지 않기 때문이다</button>
+        <button class="quiz-option" data-correct="false">③ 조흔판이 너무 부드럽기 때문이다</button>
+        <button class="quiz-option" data-correct="false">④ 석영이 화학적으로 안정하기 때문이다</button>
       </div>
     </div>
-  `;
+    <div class="feedback-banner" id="a1Fb"></div>
+  </div>
 
-  // ===== 활동 1 =====
-  stage.querySelector('#a1HintBtn').addEventListener('click', () => {
-    const hint = stage.querySelector('#a1Hint');
-    hint.classList.toggle('show');
-    STATE.summaryAnswers.a1Hint = true;
-    playSound('click');
-  });
-  stage.querySelectorAll('#a1Options .quiz-option').forEach(btn => {
-    btn.addEventListener('click', () => {
-      stage.querySelectorAll('#a1Options .quiz-option').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      STATE.summaryAnswers.a1 = btn.dataset.correct === 'true' ? 1 : 0;
-      playSound('click');
-    });
-  });
-  stage.querySelector('#a1SubmitBtn').addEventListener('click', () => {
-    const text = stage.querySelector('#activity1Text').value.trim();
-    const fb = stage.querySelector('#a1Fb');
-    const selectedOpt = stage.querySelector('#a1Options .selected');
-    const isCorrect = selectedOpt && selectedOpt.dataset.correct === 'true';
-    const hasKeyword = /굳기|단단|7|6\.5|조흔판/.test(text);
+  <!-- 활동 2: 석영 vs 방해석 구별 방법 -->
+  <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
+    <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:12px;">📝 정리 활동 2</h3>
+    <p style="font-size:15px; margin-bottom:12px;"><strong>석영과 방해석을 구별할 수 있는 방법을 모두 골라봅시다. (다중 선택 가능)</strong></p>
+    <div id="a2Options" style="display:flex; flex-direction:column; gap:10px;"></div>
+    <button class="btn btn-primary" id="a2SubmitBtn" style="margin-top:12px;">정답 확인</button>
+    <div class="feedback-banner" id="a2Fb"></div>
+  </div>
 
-    if (text.length < 5 && !selectedOpt) {
-      fb.classList.add('show','error');
-      fb.innerHTML = '✍️ 자유 서술을 작성하거나 보기를 선택해주세요.';
-      return;
+  <!-- 활동 3: 카드 옮기기 -->
+  <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
+    <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:8px;">📝 정리 활동 3</h3>
+    <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">두 광물의 특성을 비교해봅시다. <strong>3쌍의 비교 광물</strong>이 준비되어 있어요. 특성 카드를 알맞은 광물 칸에 드래그하세요!</p>
+    <div id="pairTabs" style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;">
+      <button class="btn pair-tab active" data-pair="0">자철석 vs 적철석</button>
+      <button class="btn pair-tab" data-pair="1">황철석 vs 황동석</button>
+      <button class="btn pair-tab" data-pair="2">석영 vs 방해석</button>
+    </div>
+    <div class="card-match-area" id="cardMatchArea"></div>
+  </div>
+
+  <!-- 활동 4: 플로우차트 + 빈칸 채우기 -->
+  <div style="margin:24px 0; padding:20px; background:var(--bg-secondary); border-radius:14px; border:2px solid var(--border-color);">
+    <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin-bottom:8px;">📝 정리 활동 4</h3>
+    <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">광물 구별 플로우차트를 보고 핵심 내용 빈칸을 채워봅시다. 🧭</p>
+    <div id="flowchartContainer"></div>
+    <div id="fillBlankSection" style="margin-top:20px; padding:16px; background:var(--bg-card); border-radius:12px; border:1px solid var(--border-color); line-height:2;">
+      <p>광물을 구별할 때는 다음과 같은 특성을 활용합니다.</p>
+      <p>① <input type="text" class="fill-blank-input" data-blank="0" data-answer="조흔색"> : 광물 가루의 색으로, 겉보기 색이 비슷한 광물을 구별할 때 유용하다. (예: 자철석과 적철석)</p>
+      <p>② <input type="text" class="fill-blank-input" data-blank="1" data-answer="염산 반응"> : 묽은 염산과 반응하여 거품이 발생하는 광물은 방해석이다.</p>
+      <p>③ <input type="text" class="fill-blank-input" data-blank="2" data-answer="자성"> : 클립이 달라붙는 강한 자성을 가진 광물은 자철석이다.</p>
+      <p>④ <input type="text" class="fill-blank-input" data-blank="3" data-answer="굳기"> : 광물이 다른 물질에 의해 긁히는 데 대한 저항의 정도로, 모스 굳기계로 비교한다.</p>
+      <p style="margin-top:10px;"><strong>▶ 결론:</strong> ⑤ <input type="text" class="fill-blank-input" data-blank="4" data-answer="겉보기 색">은(는) 광물 구별의 주요 특성 중 하나이지만, 비슷한 색의 광물(예: 황철석과 황동석, 자철석과 적철석)은 이것만으로 구별하기 어렵다. 따라서 조흔색·자성·염산 반응·굳기 등 광물마다 다른 ⑥ <input type="text" class="fill-blank-input" data-blank="5" data-answer="고유한"> 특성을 함께 활용하여 구별해야 한다.</p>
+    </div>
+    <button class="btn btn-primary" id="a4SubmitBtn" style="margin-top:14px;">정답 확인</button>
+    <div class="feedback-banner" id="a4Fb"></div>
+  </div>
+
+  <div class="stage-nav">
+    <button class="btn" onclick="goToStage(6)">← 이전</button>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="btn btn-skip" onclick="skipStage(7)">⤼ 건너뛰기</button>
+      <button class="btn btn-primary" id="toStage8">결과 보고서 보기 →</button>
+    </div>
+  </div>
+</div>
+```
+
+`;
+
+// ===== 활동 1 =====
+stage.querySelector(’#a1HintBtn’).addEventListener(‘click’, () => {
+const hint = stage.querySelector(’#a1Hint’);
+hint.classList.toggle(‘show’);
+STATE.summaryAnswers.a1Hint = true;
+playSound(‘click’);
+});
+stage.querySelectorAll(’#a1Options .quiz-option’).forEach(btn => {
+btn.addEventListener(‘click’, () => {
+stage.querySelectorAll(’#a1Options .quiz-option’).forEach(b => b.classList.remove(‘selected’));
+btn.classList.add(‘selected’);
+STATE.summaryAnswers.a1 = btn.dataset.correct === ‘true’ ? 1 : 0;
+playSound(‘click’);
+});
+});
+stage.querySelector(’#a1SubmitBtn’).addEventListener(‘click’, () => {
+const text = stage.querySelector(’#activity1Text’).value.trim();
+const fb = stage.querySelector(’#a1Fb’);
+const selectedOpt = stage.querySelector(’#a1Options .selected’);
+const isCorrect = selectedOpt && selectedOpt.dataset.correct === ‘true’;
+const hasKeyword = /굳기|단단|7|6.5|조흔판/.test(text);
+
+```
+if (text.length < 5 && !selectedOpt) {
+  fb.classList.add('show','error');
+  fb.innerHTML = '✍️ 자유 서술을 작성하거나 보기를 선택해주세요.';
+  return;
+}
+
+if (isCorrect || hasKeyword) {
+  fb.classList.add('show','success');
+  fb.classList.remove('error');
+  fb.innerHTML = `✅ <strong>정확해요!</strong> 조흔색은 광물을 조흔판에 긁어 가루를 만들어야 나타납니다. 그러나 <strong>석영의 굳기(7)는 조흔판의 굳기(6.5)보다 크기 때문에</strong> 석영이 조흔판에 긁히지 않고, 오히려 조흔판이 깎이게 됩니다. 따라서 석영의 조흔색은 조흔판으로는 관찰할 수 없습니다.`;
+  STATE.scores.summary++;
+  STATE.summaryAnswers.a1Text = text;
+  playSound('success');
+} else {
+  fb.classList.add('show','error');
+  fb.classList.remove('success');
+  fb.innerHTML = `🔍 핵심은 <strong>"굳기"</strong>예요. 석영(7)과 조흔판(6.5)의 굳기를 비교해보세요. 힌트 보기를 눌러보면 도움이 될 거예요.`;
+  playSound('error');
+}
+```
+
+});
+
+// ===== 활동 2 =====
+const a2Items = [
+{label:‘① 묽은 염산을 떨어뜨려 거품 발생 여부 확인’, correct:true},
+{label:‘② 클립이 달라붙는지 확인’, correct:false},
+{label:‘③ 두 광물을 서로 긁어 굳기 비교’, correct:true},
+{label:‘④ 조흔판에 긁었을 때 조흔색이 나타나는지 확인 (석영은 안 긁힘, 방해석은 흰색 조흔색)’, correct:true},
+{label:‘⑤ 겉보기 색으로 구별 (둘 다 흰색~무색)’, correct:false}
+];
+const a2Container = stage.querySelector(’#a2Options’);
+a2Items.forEach((item, i) => {
+const div = document.createElement(‘div’);
+div.className = ‘safety-item’;
+div.style.cursor = ‘pointer’;
+div.innerHTML = `<div class="safety-checkbox" id="a2cb-${i}"></div> <div class="safety-text">${item.label}</div>`;
+div.addEventListener(‘click’, () => {
+div.classList.toggle(‘checked’);
+const cb = div.querySelector(’.safety-checkbox’);
+cb.innerHTML = div.classList.contains(‘checked’) ? ‘✓’ : ‘’;
+playSound(‘click’);
+});
+a2Container.appendChild(div);
+});
+stage.querySelector(’#a2SubmitBtn’).addEventListener(‘click’, () => {
+const fb = stage.querySelector(’#a2Fb’);
+const selected = [];
+a2Container.querySelectorAll(’.safety-item’).forEach((el, i) => {
+if (el.classList.contains(‘checked’)) selected.push(i);
+});
+const correctIdx = a2Items.map((it, i) => it.correct ? i : -1).filter(i => i >= 0);
+const isPerfect = selected.length === correctIdx.length && selected.every(s => correctIdx.includes(s));
+a2Container.querySelectorAll(’.safety-item’).forEach((el, i) => {
+if (a2Items[i].correct) {
+el.style.borderColor = ‘var(–success)’;
+el.style.background = ‘rgba(74,124,89,0.1)’;
+}
+});
+if (isPerfect) {
+fb.classList.add(‘show’,‘success’);
+fb.classList.remove(‘error’);
+fb.innerHTML = `🎯 <strong>완벽해요!</strong> 석영과 방해석은 겉보기 색이 비슷하지만, <strong>굳기(석영 7, 방해석 3)</strong>, <strong>염산 반응(방해석만 거품 발생)</strong>, <strong>조흔판 긁힘 여부(석영은 긁히지 않음)</strong> 등으로 명확하게 구별할 수 있습니다.`;
+STATE.scores.summary++;
+playSound(‘success’);
+} else {
+fb.classList.add(‘show’,‘error’);
+fb.classList.remove(‘success’);
+fb.innerHTML = `🔍 정답은 <strong>①, ③, ④</strong>입니다. 자성(②)은 자철석에만 해당하고, 겉보기 색(⑤)은 둘 다 비슷해서 구별이 어렵습니다.`;
+playSound(‘error’);
+}
+STATE.summaryAnswers.a2 = selected;
+});
+
+// ===== 활동 3: 카드 옮기기 =====
+const PAIRS = [
+{
+ids: [‘magnetite’,‘hematite’],
+attrs: [
+{key:‘겉보기 색’, target0:‘검은색(금속광택)’, target1:‘검붉은색(금속광택)’},
+{key:‘조흔색’, target0:‘검은색’, target1:‘붉은색’},
+{key:‘자성’, target0:‘강한 자성’, target1:‘약함(거의 없음)’},
+{key:‘염산 반응’, target0:‘반응 없음’, target1:‘반응 없음’},
+{key:‘굳기’, target0:‘5.5~6.5’, target1:’5.5~6.5’}
+],
+common: ‘두 광물 모두 어두운 색 계열의 겉보기 색을 띠고, 굳기가 비슷하며, 염산에 반응하지 않습니다.’,
+diff: ‘조흔색(자철석=검은색, 적철석=붉은색)과 자성(자철석=강함, 적철석=약함)으로 구별할 수 있습니다.’
+},
+{
+ids: [‘pyrite’,‘chalcopyrite’],
+attrs: [
+{key:‘겉보기 색’, target0:‘황동색(금속광택)’, target1:‘황동색(금속광택)’},
+{key:‘조흔색’, target0:‘검은색’, target1:‘녹흑색’},
+{key:‘자성’, target0:‘없음’, target1:‘없음’},
+{key:‘염산 반응’, target0:‘반응 없음’, target1:‘반응 없음’},
+{key:‘굳기’, target0:‘6~6.5’, target1:’3.5~4’}
+],
+common: ‘두 광물 모두 황동색 금속광택을 띠고, 자성과 염산 반응이 없습니다.’,
+diff: ‘조흔색(황철석=검은색, 황동석=녹흑색)과 굳기(황철석 6~6.5, 황동석 3.5~4)로 구별할 수 있습니다.’
+},
+{
+ids: [‘quartz’,‘calcite’],
+attrs: [
+{key:‘겉보기 색’, target0:‘흰색~무색투명’, target1:’흰색~무색투명’},
+{key:‘조흔색’, target0:‘긁히지 않음’, target1:‘흰색’},
+{key:‘자성’, target0:‘없음’, target1:‘없음’},
+{key:‘염산 반응’, target0:‘반응 없음’, target1:‘거품 발생(CO₂)’},
+{key:‘굳기’, target0:‘7’, target1:‘3’}
+],
+common: ‘두 광물 모두 흰색~무색투명의 겉보기 색을 띠고, 자성이 없습니다.’,
+diff: ‘굳기(석영 7, 방해석 3), 염산 반응(방해석만 거품 발생), 조흔판 긁힘 여부로 구별할 수 있습니다.’
+}
+];
+
+const renderPair = (pairIdx) => {
+STATE.summaryAnswers.a3.currentPair = pairIdx;
+const area = stage.querySelector(’#cardMatchArea’);
+const pair = PAIRS[pairIdx];
+const m0 = MINERALS[pair.ids[0]];
+const m1 = MINERALS[pair.ids[1]];
+const allAttrs = [];
+pair.attrs.forEach(a => {
+if (a.target0 === a.target1) {
+// 두 광물의 값이 동일하면 카드 하나만 생성, 양쪽 모두 정답
+allAttrs.push({key:a.key, value:a.target0, mineral:‘both’});
+} else {
+allAttrs.push({key:a.key, value:a.target0, mineral:0});
+allAttrs.push({key:a.key, value:a.target1, mineral:1});
+}
+});
+for (let i = allAttrs.length-1; i > 0; i–) {
+const j = Math.floor(Math.random() * (i+1));
+[allAttrs[i], allAttrs[j]] = [allAttrs[j], allAttrs[i]];
+}
+
+```
+area.innerHTML = `
+  <div class="compare-slots">
+    <div class="compare-slot filled">
+      <div style="width:100px; height:100px; margin:0 auto;">${renderMineralSVG(pair.ids[0],'large')}</div>
+      <div class="mineral-name">${m0.name}</div>
+      <div class="mineral-formula">${m0.formula}</div>
+      <div class="attr-drop-zone" data-mineral="0" id="dropZone0"></div>
+    </div>
+    <div class="compare-slot filled">
+      <div style="width:100px; height:100px; margin:0 auto;">${renderMineralSVG(pair.ids[1],'large')}</div>
+      <div class="mineral-name">${m1.name}</div>
+      <div class="mineral-formula">${m1.formula}</div>
+      <div class="attr-drop-zone" data-mineral="1" id="dropZone1"></div>
+    </div>
+  </div>
+  <h4 style="margin:14px 0 8px; font-size:13px; color:var(--text-muted);">⬇️ 아래 특성 카드를 알맞은 광물 칸으로 드래그 (또는 클릭)하세요:</h4>
+  <div class="attribute-cards" id="attrPool"></div>
+  <div id="pairResult" style="display:none; margin-top:14px;"></div>
+`;
+
+const pool = area.querySelector('#attrPool');
+allAttrs.forEach((a, i) => {
+  const card = document.createElement('div');
+  card.className = 'attr-card';
+  card.draggable = true;
+  card.style.position = 'relative';
+  card.dataset.attrIdx = i;
+  card.dataset.mineral = a.mineral;
+  card.dataset.key = a.key;
+  card.dataset.value = a.value;
+  const bothBadge = a.mineral === 'both'
+    ? '<span style="display:inline-block; margin-left:6px; background:rgba(212,160,76,0.85); color:#3a2a18; font-size:10px; padding:2px 7px; border-radius:10px; font-weight:700;">양쪽 공통</span>'
+    : '';
+  card.innerHTML = `<strong>${a.key}:</strong> ${a.value}${bothBadge}`;
+  card.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', i);
+    card.classList.add('dragging');
+  });
+  card.addEventListener('dragend', () => card.classList.remove('dragging'));
+  card.addEventListener('click', (e) => {
+    if (card.classList.contains('placed')) return;
+    // 이미 다른 카드의 팝업이 떠 있으면 그것을 닫고 종료 (한 번에 하나만)
+    const existingTip = document.querySelector('.confirm-tip');
+    if (existingTip) {
+      existingTip.remove();
+      if (existingTip.dataset.cardIdx === String(i)) return; // 같은 카드 재클릭 시 토글
+    }
+    // 카드 위치를 기준으로 팝업을 fixed로 띄워 다른 카드와 겹치지 않도록 함
+    const cardRect = card.getBoundingClientRect();
+    const tip = document.createElement('div');
+    tip.className = 'confirm-tip';
+    tip.dataset.cardIdx = String(i);
+    // 화면 좌표 기준 fixed 위치
+    const tipTop = cardRect.bottom + 8;
+    const tipLeft = cardRect.left + cardRect.width / 2;
+    tip.style.cssText = `position:fixed; top:${tipTop}px; left:${tipLeft}px; transform:translateX(-50%); background:var(--bg-card); border:2px solid var(--accent-primary); padding:8px; border-radius:10px; z-index:9999; display:flex; gap:8px; box-shadow:var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.2)); white-space:nowrap;`;
+    tip.innerHTML = `<button class="btn" data-target="0" style="padding:6px 10px; font-size:12px;">← ${m0.name}</button><button class="btn" data-target="1" style="padding:6px 10px; font-size:12px;">${m1.name} →</button>`;
+    document.body.appendChild(tip);
+
+    // 화면 가장자리 보정 (팝업이 화면 밖으로 나가지 않도록)
+    const tipRect = tip.getBoundingClientRect();
+    if (tipRect.right > window.innerWidth - 8) {
+      tip.style.left = (window.innerWidth - 8 - tipRect.width / 2) + 'px';
+    }
+    if (tipRect.left < 8) {
+      tip.style.left = (8 + tipRect.width / 2) + 'px';
+    }
+    if (tipRect.bottom > window.innerHeight - 8) {
+      tip.style.top = (cardRect.top - tipRect.height - 8) + 'px';
     }
 
-    if (isCorrect || hasKeyword) {
-      fb.classList.add('show','success');
-      fb.classList.remove('error');
-      fb.innerHTML = `✅ <strong>정확해요!</strong> 조흔색은 광물을 조흔판에 긁어 가루를 만들어야 나타납니다. 그러나 <strong>석영의 굳기(7)는 조흔판의 굳기(6.5)보다 크기 때문에</strong> 석영이 조흔판에 긁히지 않고, 오히려 조흔판이 깎이게 됩니다. 따라서 석영의 조흔색은 조흔판으로는 관찰할 수 없습니다.`;
-      STATE.scores.summary++;
-      STATE.summaryAnswers.a1Text = text;
-      playSound('success');
-    } else {
-      fb.classList.add('show','error');
-      fb.classList.remove('success');
-      fb.innerHTML = `🔍 핵심은 <strong>"굳기"</strong>예요. 석영(7)과 조흔판(6.5)의 굳기를 비교해보세요. 힌트 보기를 눌러보면 도움이 될 거예요.`;
-      playSound('error');
-    }
-  });
-
-  // ===== 활동 2 =====
-  const a2Items = [
-    {label:'① 묽은 염산을 떨어뜨려 거품 발생 여부 확인', correct:true},
-    {label:'② 클립이 달라붙는지 확인', correct:false},
-    {label:'③ 두 광물을 서로 긁어 굳기 비교', correct:true},
-    {label:'④ 조흔판에 긁었을 때 조흔색이 나타나는지 확인 (석영은 안 긁힘, 방해석은 흰색 조흔색)', correct:true},
-    {label:'⑤ 겉보기 색으로 구별 (둘 다 흰색~무색)', correct:false}
-  ];
-  const a2Container = stage.querySelector('#a2Options');
-  a2Items.forEach((item, i) => {
-    const div = document.createElement('div');
-    div.className = 'safety-item';
-    div.style.cursor = 'pointer';
-    div.innerHTML = `
-      <div class="safety-checkbox" id="a2cb-${i}"></div>
-      <div class="safety-text">${item.label}</div>
-    `;
-    div.addEventListener('click', () => {
-      div.classList.toggle('checked');
-      const cb = div.querySelector('.safety-checkbox');
-      cb.innerHTML = div.classList.contains('checked') ? '✓' : '';
-      playSound('click');
-    });
-    a2Container.appendChild(div);
-  });
-  stage.querySelector('#a2SubmitBtn').addEventListener('click', () => {
-    const fb = stage.querySelector('#a2Fb');
-    const selected = [];
-    a2Container.querySelectorAll('.safety-item').forEach((el, i) => {
-      if (el.classList.contains('checked')) selected.push(i);
-    });
-    const correctIdx = a2Items.map((it, i) => it.correct ? i : -1).filter(i => i >= 0);
-    const isPerfect = selected.length === correctIdx.length && selected.every(s => correctIdx.includes(s));
-    a2Container.querySelectorAll('.safety-item').forEach((el, i) => {
-      if (a2Items[i].correct) {
-        el.style.borderColor = 'var(--success)';
-        el.style.background = 'rgba(74,124,89,0.1)';
-      }
-    });
-    if (isPerfect) {
-      fb.classList.add('show','success');
-      fb.classList.remove('error');
-      fb.innerHTML = `🎯 <strong>완벽해요!</strong> 석영과 방해석은 겉보기 색이 비슷하지만, <strong>굳기(석영 7, 방해석 3)</strong>, <strong>염산 반응(방해석만 거품 발생)</strong>, <strong>조흔판 긁힘 여부(석영은 긁히지 않음)</strong> 등으로 명확하게 구별할 수 있습니다.`;
-      STATE.scores.summary++;
-      playSound('success');
-    } else {
-      fb.classList.add('show','error');
-      fb.classList.remove('success');
-      fb.innerHTML = `🔍 정답은 <strong>①, ③, ④</strong>입니다. 자성(②)은 자철석에만 해당하고, 겉보기 색(⑤)은 둘 다 비슷해서 구별이 어렵습니다.`;
-      playSound('error');
-    }
-    STATE.summaryAnswers.a2 = selected;
-  });
-
-  // ===== 활동 3: 카드 옮기기 =====
-  const PAIRS = [
-    {
-      ids: ['magnetite','hematite'],
-      attrs: [
-        {key:'겉보기 색', target0:'검은색(금속광택)', target1:'검붉은색(금속광택)'},
-        {key:'조흔색', target0:'검은색', target1:'붉은색'},
-        {key:'자성', target0:'강한 자성', target1:'약함(거의 없음)'},
-        {key:'염산 반응', target0:'반응 없음', target1:'반응 없음'},
-        {key:'굳기', target0:'5.5~6.5', target1:'5.5~6.5'}
-      ],
-      common: '두 광물 모두 어두운 색 계열의 겉보기 색을 띠고, 굳기가 비슷하며, 염산에 반응하지 않습니다.',
-      diff: '조흔색(자철석=검은색, 적철석=붉은색)과 자성(자철석=강함, 적철석=약함)으로 구별할 수 있습니다.'
-    },
-    {
-      ids: ['pyrite','chalcopyrite'],
-      attrs: [
-        {key:'겉보기 색', target0:'황동색(금속광택)', target1:'황동색(금속광택)'},
-        {key:'조흔색', target0:'검은색', target1:'녹흑색'},
-        {key:'자성', target0:'없음', target1:'없음'},
-        {key:'염산 반응', target0:'반응 없음', target1:'반응 없음'},
-        {key:'굳기', target0:'6~6.5', target1:'3.5~4'}
-      ],
-      common: '두 광물 모두 황동색 금속광택을 띠고, 자성과 염산 반응이 없습니다.',
-      diff: '조흔색(황철석=검은색, 황동석=녹흑색)과 굳기(황철석 6~6.5, 황동석 3.5~4)로 구별할 수 있습니다.'
-    },
-    {
-      ids: ['quartz','calcite'],
-      attrs: [
-        {key:'겉보기 색', target0:'흰색~무색투명', target1:'흰색~무색투명'},
-        {key:'조흔색', target0:'긁히지 않음', target1:'흰색'},
-        {key:'자성', target0:'없음', target1:'없음'},
-        {key:'염산 반응', target0:'반응 없음', target1:'거품 발생(CO₂)'},
-        {key:'굳기', target0:'7', target1:'3'}
-      ],
-      common: '두 광물 모두 흰색~무색투명의 겉보기 색을 띠고, 자성이 없습니다.',
-      diff: '굳기(석영 7, 방해석 3), 염산 반응(방해석만 거품 발생), 조흔판 긁힘 여부로 구별할 수 있습니다.'
-    }
-  ];
-
-  const renderPair = (pairIdx) => {
-    STATE.summaryAnswers.a3.currentPair = pairIdx;
-    const area = stage.querySelector('#cardMatchArea');
-    const pair = PAIRS[pairIdx];
-    const m0 = MINERALS[pair.ids[0]];
-    const m1 = MINERALS[pair.ids[1]];
-    const allAttrs = [];
-    pair.attrs.forEach(a => {
-      if (a.target0 === a.target1) {
-        // 두 광물의 값이 동일하면 카드 하나만 생성, 양쪽 모두 정답
-        allAttrs.push({key:a.key, value:a.target0, mineral:'both'});
-      } else {
-        allAttrs.push({key:a.key, value:a.target0, mineral:0});
-        allAttrs.push({key:a.key, value:a.target1, mineral:1});
-      }
-    });
-    for (let i = allAttrs.length-1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i+1));
-      [allAttrs[i], allAttrs[j]] = [allAttrs[j], allAttrs[i]];
-    }
-
-    area.innerHTML = `
-      <div class="compare-slots">
-        <div class="compare-slot filled">
-          <div style="width:100px; height:100px; margin:0 auto;">${renderMineralSVG(pair.ids[0],'large')}</div>
-          <div class="mineral-name">${m0.name}</div>
-          <div class="mineral-formula">${m0.formula}</div>
-          <div class="attr-drop-zone" data-mineral="0" id="dropZone0"></div>
-        </div>
-        <div class="compare-slot filled">
-          <div style="width:100px; height:100px; margin:0 auto;">${renderMineralSVG(pair.ids[1],'large')}</div>
-          <div class="mineral-name">${m1.name}</div>
-          <div class="mineral-formula">${m1.formula}</div>
-          <div class="attr-drop-zone" data-mineral="1" id="dropZone1"></div>
-        </div>
-      </div>
-      <h4 style="margin:14px 0 8px; font-size:13px; color:var(--text-muted);">⬇️ 아래 특성 카드를 알맞은 광물 칸으로 드래그 (또는 클릭)하세요:</h4>
-      <div class="attribute-cards" id="attrPool"></div>
-      <div id="pairResult" style="display:none; margin-top:14px;"></div>
-    `;
-
-    const pool = area.querySelector('#attrPool');
-    allAttrs.forEach((a, i) => {
-      const card = document.createElement('div');
-      card.className = 'attr-card';
-      card.draggable = true;
-      card.style.position = 'relative';
-      card.dataset.attrIdx = i;
-      card.dataset.mineral = a.mineral;
-      card.dataset.key = a.key;
-      card.dataset.value = a.value;
-      const bothBadge = a.mineral === 'both'
-        ? '<span style="display:inline-block; margin-left:6px; background:rgba(212,160,76,0.85); color:#3a2a18; font-size:10px; padding:2px 7px; border-radius:10px; font-weight:700;">양쪽 공통</span>'
-        : '';
-      card.innerHTML = `<strong>${a.key}:</strong> ${a.value}${bothBadge}`;
-      card.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', i);
-        card.classList.add('dragging');
+    tip.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', (ev) => {
+        ev.stopPropagation();
+        placeAttr(card, b.dataset.target);
+        tip.remove();
       });
-      card.addEventListener('dragend', () => card.classList.remove('dragging'));
-      card.addEventListener('click', () => {
-        if (card.classList.contains('placed')) return;
-        if (card.querySelector('.confirm-tip')) return;
-        const tip = document.createElement('div');
-        tip.className = 'confirm-tip';
-        tip.style.cssText = 'position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:4px; background:var(--bg-card); border:2px solid var(--accent-primary); padding:6px; border-radius:8px; z-index:100; display:flex; gap:6px; box-shadow:var(--shadow-md); white-space:nowrap;';
-        tip.innerHTML = `<button class="btn" data-target="0" style="padding:4px 8px; font-size:11px;">← ${m0.name}</button><button class="btn" data-target="1" style="padding:4px 8px; font-size:11px;">${m1.name} →</button>`;
-        card.appendChild(tip);
-        tip.querySelectorAll('button').forEach(b => {
-          b.addEventListener('click', (ev) => {
-            ev.stopPropagation();
-            placeAttr(card, b.dataset.target);
-            tip.remove();
-          });
-        });
-        setTimeout(() => { if (tip.parentNode) tip.remove(); }, 5000);
-      });
-      pool.appendChild(card);
     });
-
-    [0,1].forEach(idx => {
-      const zone = area.querySelector(`#dropZone${idx}`);
-      zone.addEventListener('dragover', (e) => {
-        e.preventDefault();
-        zone.classList.add('drag-over');
-      });
-      zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-      zone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        zone.classList.remove('drag-over');
-        const cardIdx = e.dataTransfer.getData('text/plain');
-        const card = pool.querySelector(`[data-attr-idx="${cardIdx}"]`);
-        if (card) placeAttr(card, idx);
-      });
-    });
-
-    const placeAttr = (card, targetIdx) => {
-      // mineral === 'both'인 경우 양쪽 모두 정답 (target0 === target1)
-      const isBoth = card.dataset.mineral === 'both';
-      const correct = isBoth || card.dataset.mineral == targetIdx;
-      const zone = area.querySelector(`#dropZone${targetIdx}`);
-
-      if (correct) {
-        // 정답: 그대로 배치
-        const placedCard = card.cloneNode(true);
-        placedCard.removeAttribute('draggable');
-        placedCard.classList.remove('dragging');
-        const tip = placedCard.querySelector('.confirm-tip');
-        if (tip) tip.remove();
-        placedCard.classList.add('correct');
-        zone.appendChild(placedCard);
-
-        // 'both'인 경우 반대 쪽 슬롯에도 카드 복제하여 배치
-        if (isBoth) {
-          const otherIdx = targetIdx == 0 ? 1 : 0;
-          const otherZone = area.querySelector(`#dropZone${otherIdx}`);
-          const placedCard2 = card.cloneNode(true);
-          placedCard2.removeAttribute('draggable');
-          placedCard2.classList.remove('dragging');
-          const tip2 = placedCard2.querySelector('.confirm-tip');
-          if (tip2) tip2.remove();
-          placedCard2.classList.add('correct');
-          otherZone.appendChild(placedCard2);
-        }
-
-        card.classList.add('placed');
-        card.style.pointerEvents = 'none';
-        playSound('match');
-        STATE.scores.matching++;
-      } else {
-        // 오답: 빨간색 + 흔들림 표시. 클릭하면 풀로 복귀
-        const errorClone = card.cloneNode(true);
-        errorClone.removeAttribute('draggable');
-        const tip = errorClone.querySelector('.confirm-tip');
-        if (tip) tip.remove();
-        errorClone.classList.add('wrong', 'shake');
-        errorClone.style.position = 'relative';
-        errorClone.style.cursor = 'pointer';
-        errorClone.title = '클릭하면 다시 시도할 수 있어요';
-
-        // 안내 라벨 추가
-        const hintLabel = document.createElement('div');
-        hintLabel.style.cssText = 'font-size:10px; margin-top:4px; color:white; font-weight:600;';
-        hintLabel.textContent = '👆 클릭하면 다시 시도';
-        errorClone.appendChild(hintLabel);
-
-        zone.appendChild(errorClone);
-        playSound('error');
-
-        // 클릭 시 풀로 복귀
-        const returnToPool = () => {
-          errorClone.style.transition = 'opacity 0.3s, transform 0.3s';
-          errorClone.style.opacity = '0';
-          errorClone.style.transform = 'scale(0.8)';
-          setTimeout(() => {
-            errorClone.remove();
-            // 풀 카드를 다시 활성화 (이미 풀에 있음 - placed 클래스 없음)
-            card.classList.remove('placed'); // 혹시나
-            card.style.pointerEvents = '';
-            // 약간의 어필 효과
-            card.style.transition = 'transform 0.2s';
-            card.style.transform = 'scale(1.1)';
-            setTimeout(() => { card.style.transform = ''; }, 200);
-            playSound('click');
-          }, 320);
-        };
-        errorClone.addEventListener('click', returnToPool);
-        // 자동 복귀도 5초 후 안전망으로
-        setTimeout(() => {
-          if (errorClone.parentNode) returnToPool();
-        }, 5000);
-        return;
-      }
-
-      const remaining = pool.querySelectorAll('.attr-card:not(.placed)').length;
-      if (remaining === 0) {
-        // 실제 카드 수 (both인 attr은 1장, 다른 attr은 2장)
-        const totalCards = pair.attrs.reduce((sum, a) => sum + (a.target0 === a.target1 ? 1 : 2), 0);
-        // 정답 카운트: pool에서 placed된 카드는 모두 정답이었음 (오답은 풀로 복귀하므로)
-        // both 카드는 양쪽에 표시되어 .correct가 2개지만 점수는 1로 카운트
-        let correctCount = 0;
-        pair.attrs.forEach(a => {
-          // 해당 attr의 카드가 placed이면 정답 처리됨
-          // 키-값 조합으로 찾기는 까다로우므로 단순히 totalCards가 모두 정답 처리됐다고 가정
-          // (오답은 풀로 복귀하여 다시 시도할 수 있고, 종료 시점에는 모두 정답이어야 함)
-          correctCount += a.target0 === a.target1 ? 1 : 2;
-        });
-        const total = totalCards;
-        const resultDiv = area.querySelector('#pairResult');
-        resultDiv.style.display = 'block';
-        resultDiv.innerHTML = `
-          <div class="feedback-banner show success" style="background:rgba(74,124,89,0.1);">
-            <strong>✅ ${m0.name} vs ${m1.name} 비교 완료!</strong> (정답률: ${correctCount}/${total})
-          </div>
-          <table class="compare-table">
-            <thead><tr><th>특성</th><th>${m0.name}</th><th>${m1.name}</th></tr></thead>
-            <tbody>
-              ${pair.attrs.map(a => `<tr><td><strong>${a.key}</strong></td><td>${a.target0}</td><td>${a.target1}</td></tr>`).join('')}
-            </tbody>
-          </table>
-          <div class="info-box" style="margin-top:12px;">
-            <strong>🤝 공통점:</strong> ${pair.common}<br>
-            <strong>🔀 차이점:</strong> ${pair.diff}
-          </div>
-        `;
-        STATE.summaryAnswers.a3[`pair${pairIdx+1}Done`] = true;
-        if (correctCount === total) {
-          playSound('fanfare');
-          launchConfetti(0.5);
-        }
+    // 외부 클릭 시 팝업 닫기
+    const closeOnOutside = (ev) => {
+      if (!tip.contains(ev.target) && ev.target !== card && !card.contains(ev.target)) {
+        tip.remove();
+        document.removeEventListener('click', closeOnOutside, true);
       }
     };
-  };
-
-  stage.querySelectorAll('.pair-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      stage.querySelectorAll('.pair-tab').forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      renderPair(parseInt(tab.dataset.pair));
-    });
+    setTimeout(() => document.addEventListener('click', closeOnOutside, true), 0);
+    // 자동 닫기
+    setTimeout(() => { if (tip.parentNode) { tip.remove(); document.removeEventListener('click', closeOnOutside, true); } }, 6000);
   });
-  const activeStyle = document.createElement('style');
-  activeStyle.textContent = `.pair-tab.active { background: var(--accent-primary) !important; color: white !important; border-color: var(--accent-primary) !important; }`;
-  document.head.appendChild(activeStyle);
+  pool.appendChild(card);
+});
 
-  renderPair(0);
+[0,1].forEach(idx => {
+  const zone = area.querySelector(`#dropZone${idx}`);
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    zone.classList.add('drag-over');
+  });
+  zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('drag-over');
+    const cardIdx = e.dataTransfer.getData('text/plain');
+    const card = pool.querySelector(`[data-attr-idx="${cardIdx}"]`);
+    if (card) placeAttr(card, idx);
+  });
+});
 
-  // ===== 활동 4: 플로우차트 + 빈칸 =====
-  stage.querySelector('#flowchartContainer').innerHTML = `<div class="flowchart-svg-wrapper">${renderFlowchartSVG()}</div>`;
+const placeAttr = (card, targetIdx) => {
+  // mineral === 'both'인 경우 양쪽 모두 정답 (target0 === target1)
+  const isBoth = card.dataset.mineral === 'both';
+  const correct = isBoth || card.dataset.mineral == targetIdx;
+  const zone = area.querySelector(`#dropZone${targetIdx}`);
 
-  stage.querySelector('#a4SubmitBtn').addEventListener('click', () => {
-    const inputs = stage.querySelectorAll('.fill-blank-input');
+  if (correct) {
+    // 정답: 그대로 배치
+    const placedCard = card.cloneNode(true);
+    placedCard.removeAttribute('draggable');
+    placedCard.classList.remove('dragging');
+    const tip = placedCard.querySelector('.confirm-tip');
+    if (tip) tip.remove();
+    placedCard.classList.add('correct');
+    zone.appendChild(placedCard);
+
+    // 'both'인 경우 반대 쪽 슬롯에도 카드 복제하여 배치
+    if (isBoth) {
+      const otherIdx = targetIdx == 0 ? 1 : 0;
+      const otherZone = area.querySelector(`#dropZone${otherIdx}`);
+      const placedCard2 = card.cloneNode(true);
+      placedCard2.removeAttribute('draggable');
+      placedCard2.classList.remove('dragging');
+      const tip2 = placedCard2.querySelector('.confirm-tip');
+      if (tip2) tip2.remove();
+      placedCard2.classList.add('correct');
+      otherZone.appendChild(placedCard2);
+    }
+
+    card.classList.add('placed');
+    card.style.pointerEvents = 'none';
+    playSound('match');
+    STATE.scores.matching++;
+  } else {
+    // 오답: 빨간색 + 흔들림 표시. 클릭하면 풀로 복귀
+    const errorClone = card.cloneNode(true);
+    errorClone.removeAttribute('draggable');
+    const tip = errorClone.querySelector('.confirm-tip');
+    if (tip) tip.remove();
+    errorClone.classList.add('wrong', 'shake');
+    errorClone.style.position = 'relative';
+    errorClone.style.cursor = 'pointer';
+    errorClone.title = '클릭하면 다시 시도할 수 있어요';
+
+    // 안내 라벨 추가
+    const hintLabel = document.createElement('div');
+    hintLabel.style.cssText = 'font-size:10px; margin-top:4px; color:white; font-weight:600;';
+    hintLabel.textContent = '👆 클릭하면 다시 시도';
+    errorClone.appendChild(hintLabel);
+
+    zone.appendChild(errorClone);
+    playSound('error');
+
+    // 클릭 시 풀로 복귀
+    const returnToPool = () => {
+      errorClone.style.transition = 'opacity 0.3s, transform 0.3s';
+      errorClone.style.opacity = '0';
+      errorClone.style.transform = 'scale(0.8)';
+      setTimeout(() => {
+        errorClone.remove();
+        // 풀 카드를 다시 활성화 (이미 풀에 있음 - placed 클래스 없음)
+        card.classList.remove('placed'); // 혹시나
+        card.style.pointerEvents = '';
+        // 약간의 어필 효과
+        card.style.transition = 'transform 0.2s';
+        card.style.transform = 'scale(1.1)';
+        setTimeout(() => { card.style.transform = ''; }, 200);
+        playSound('click');
+      }, 320);
+    };
+    errorClone.addEventListener('click', returnToPool);
+    // 자동 복귀도 5초 후 안전망으로
+    setTimeout(() => {
+      if (errorClone.parentNode) returnToPool();
+    }, 5000);
+    return;
+  }
+
+  const remaining = pool.querySelectorAll('.attr-card:not(.placed)').length;
+  if (remaining === 0) {
+    // 실제 카드 수 (both인 attr은 1장, 다른 attr은 2장)
+    const totalCards = pair.attrs.reduce((sum, a) => sum + (a.target0 === a.target1 ? 1 : 2), 0);
+    // 정답 카운트: pool에서 placed된 카드는 모두 정답이었음 (오답은 풀로 복귀하므로)
+    // both 카드는 양쪽에 표시되어 .correct가 2개지만 점수는 1로 카운트
     let correctCount = 0;
-    const total = inputs.length;
-    const fb = stage.querySelector('#a4Fb');
-    const synonyms = {
-      0: ['조흔색'],
-      1: ['염산 반응','염산','HCl','염산반응','거품'],
-      2: ['자성','자기'],
-      3: ['굳기','경도'],
-      4: ['겉보기 색','겉보기색','겉보기'],
-      5: ['고유한','고유의','각각의 고유한','각각의','특유의','특별한']
-    };
-    inputs.forEach((inp, i) => {
-      const v = inp.value.trim();
-      const accepted = synonyms[i] || [];
-      const isOk = v.length >= 1 && accepted.some(a => v === a || v.includes(a) || (a.includes(v) && v.length >= 2));
-      if (isOk) {
-        inp.classList.add('correct');
-        inp.classList.remove('wrong');
-        correctCount++;
-      } else {
-        inp.classList.add('wrong');
-        inp.classList.remove('correct');
-      }
-      STATE.summaryAnswers.a4.blanks[i] = v;
+    pair.attrs.forEach(a => {
+      // 해당 attr의 카드가 placed이면 정답 처리됨
+      // 키-값 조합으로 찾기는 까다로우므로 단순히 totalCards가 모두 정답 처리됐다고 가정
+      // (오답은 풀로 복귀하여 다시 시도할 수 있고, 종료 시점에는 모두 정답이어야 함)
+      correctCount += a.target0 === a.target1 ? 1 : 2;
     });
-    STATE.summaryAnswers.a4.correctCount = correctCount;
+    const total = totalCards;
+    const resultDiv = area.querySelector('#pairResult');
+    resultDiv.style.display = 'block';
+    resultDiv.innerHTML = `
+      <div class="feedback-banner show success" style="background:rgba(74,124,89,0.1);">
+        <strong>✅ ${m0.name} vs ${m1.name} 비교 완료!</strong> (정답률: ${correctCount}/${total})
+      </div>
+      <table class="compare-table">
+        <thead><tr><th>특성</th><th>${m0.name}</th><th>${m1.name}</th></tr></thead>
+        <tbody>
+          ${pair.attrs.map(a => `<tr><td><strong>${a.key}</strong></td><td>${a.target0}</td><td>${a.target1}</td></tr>`).join('')}
+        </tbody>
+      </table>
+      <div class="info-box" style="margin-top:12px;">
+        <strong>🤝 공통점:</strong> ${pair.common}<br>
+        <strong>🔀 차이점:</strong> ${pair.diff}
+      </div>
+    `;
+    STATE.summaryAnswers.a3[`pair${pairIdx+1}Done`] = true;
     if (correctCount === total) {
-      fb.classList.add('show','success');
-      fb.classList.remove('error');
-      fb.innerHTML = `🏆 <strong>광물 박사 등극!</strong> 모든 빈칸을 정확히 채웠어요. 광물 구별의 핵심을 완벽히 이해했네요!<br><span class="badge">🏆 광물 박사</span>`;
-      STATE.scores.summary++;
       playSound('fanfare');
-      launchConfetti(1.0);
-    } else {
-      fb.classList.add('show','error');
-      fb.classList.remove('success');
-      fb.innerHTML = `📝 ${correctCount}/${total} 정답. 정답: ① 조흔색 / ② 염산 반응 / ③ 자성 / ④ 굳기 / ⑤ 겉보기 색 / ⑥ 고유한`;
-      playSound('error');
+      launchConfetti(0.5);
     }
-  });
+  }
+};
+```
 
-  stage.querySelector('#toStage8').addEventListener('click', () => goToStage(8));
+};
+
+stage.querySelectorAll(’.pair-tab’).forEach(tab => {
+tab.addEventListener(‘click’, () => {
+stage.querySelectorAll(’.pair-tab’).forEach(t => t.classList.remove(‘active’));
+tab.classList.add(‘active’);
+renderPair(parseInt(tab.dataset.pair));
+});
+});
+const activeStyle = document.createElement(‘style’);
+activeStyle.textContent = `.pair-tab.active { background: var(--accent-primary) !important; color: white !important; border-color: var(--accent-primary) !important; }`;
+document.head.appendChild(activeStyle);
+
+renderPair(0);
+
+// ===== 활동 4: 플로우차트 + 빈칸 =====
+stage.querySelector(’#flowchartContainer’).innerHTML = `<div class="flowchart-svg-wrapper">${renderFlowchartSVG()}</div>`;
+
+stage.querySelector(’#a4SubmitBtn’).addEventListener(‘click’, () => {
+const inputs = stage.querySelectorAll(’.fill-blank-input’);
+let correctCount = 0;
+const total = inputs.length;
+const fb = stage.querySelector(’#a4Fb’);
+const synonyms = {
+0: [‘조흔색’],
+1: [‘염산 반응’,‘염산’,‘HCl’,‘염산반응’,‘거품’],
+2: [‘자성’,‘자기’],
+3: [‘굳기’,‘경도’],
+4: [‘겉보기 색’,‘겉보기색’,‘겉보기’],
+5: [‘고유한’,‘고유의’,‘각각의 고유한’,‘각각의’,‘특유의’,‘특별한’]
+};
+inputs.forEach((inp, i) => {
+const v = inp.value.trim();
+const accepted = synonyms[i] || [];
+const isOk = v.length >= 1 && accepted.some(a => v === a || v.includes(a) || (a.includes(v) && v.length >= 2));
+if (isOk) {
+inp.classList.add(‘correct’);
+inp.classList.remove(‘wrong’);
+correctCount++;
+} else {
+inp.classList.add(‘wrong’);
+inp.classList.remove(‘correct’);
+}
+STATE.summaryAnswers.a4.blanks[i] = v;
+});
+STATE.summaryAnswers.a4.correctCount = correctCount;
+if (correctCount === total) {
+fb.classList.add(‘show’,‘success’);
+fb.classList.remove(‘error’);
+fb.innerHTML = `🏆 <strong>광물 박사 등극!</strong> 모든 빈칸을 정확히 채웠어요. 광물 구별의 핵심을 완벽히 이해했네요!<br><span class="badge">🏆 광물 박사</span>`;
+STATE.scores.summary++;
+playSound(‘fanfare’);
+launchConfetti(1.0);
+} else {
+fb.classList.add(‘show’,‘error’);
+fb.classList.remove(‘success’);
+fb.innerHTML = `📝 ${correctCount}/${total} 정답. 정답: ① 조흔색 / ② 염산 반응 / ③ 자성 / ④ 굳기 / ⑤ 겉보기 색 / ⑥ 고유한`;
+playSound(‘error’);
+}
+});
+
+stage.querySelector(’#toStage8’).addEventListener(‘click’, () => goToStage(8));
 }
 
 function renderFlowchartSVG() {
-  return `
-    <svg class="flowchart-svg" viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="광물 구별 플로우차트">
-      <title>광물 구별 플로우차트</title>
-      <desc>미지의 광물을 염산 반응, 자성, 조흔색 검사로 구별하는 결정 흐름도</desc>
-      <defs>
-        <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-          <path d="M0,0 L0,6 L9,3 z" fill="var(--accent-tertiary)"/>
-        </marker>
-        <linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="var(--bg-card)"/>
-          <stop offset="100%" stop-color="var(--bg-secondary)"/>
-        </linearGradient>
-      </defs>
+return `
+<svg class="flowchart-svg" viewBox="0 0 900 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="광물 구별 플로우차트">
+<title>광물 구별 플로우차트</title>
+<desc>미지의 광물을 염산 반응, 자성, 조흔색 검사로 구별하는 결정 흐름도</desc>
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+<path d="M0,0 L0,6 L9,3 z" fill="var(--accent-tertiary)"/>
+</marker>
+<linearGradient id="boxGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="var(--bg-card)"/>
+<stop offset="100%" stop-color="var(--bg-secondary)"/>
+</linearGradient>
+</defs>
 
-      <!-- ===== 시작 노드 ===== -->
-      <rect x="360" y="20" width="180" height="50" rx="25" fill="var(--accent-primary)" stroke="var(--accent-primary)"/>
-      <text x="450" y="50" text-anchor="middle" dominant-baseline="central" fill="white" font-size="17" font-weight="bold" font-family="'Black Han Sans',sans-serif">미지의 광물</text>
+```
+  <!-- ===== 시작 노드 ===== -->
+  <rect x="360" y="20" width="180" height="50" rx="25" fill="var(--accent-primary)" stroke="var(--accent-primary)"/>
+  <text x="450" y="50" text-anchor="middle" dominant-baseline="central" fill="white" font-size="17" font-weight="bold" font-family="'Black Han Sans',sans-serif">미지의 광물</text>
 
-      <line x1="450" y1="70" x2="450" y2="98" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="450" y1="70" x2="450" y2="98" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
 
-      <!-- ===== Step 1: 염산 검사 ===== -->
-      <rect x="350" y="100" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-      <text x="450" y="124" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">① 묽은 염산 떨어뜨림</text>
+  <!-- ===== Step 1: 염산 검사 ===== -->
+  <rect x="350" y="100" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+  <text x="450" y="124" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">① 묽은 염산 떨어뜨림</text>
 
-      <!-- 분기 -->
-      <path d="M 410 148 L 410 175 L 230 175 L 230 200" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 490 148 L 490 175 L 670 175 L 670 200" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <!-- 분기 -->
+  <path d="M 410 148 L 410 175 L 230 175 L 230 200" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 490 148 L 490 175 L 670 175 L 670 200" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
-      <!-- 거품 O → 방해석 (최종 식별) -->
-      <rect x="130" y="202" width="200" height="50" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="230" y="220" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="13" font-weight="600">거품 O</text>
-      <text x="230" y="240" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 방해석</text>
+  <!-- 거품 O → 방해석 (최종 식별) -->
+  <rect x="130" y="202" width="200" height="50" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="230" y="220" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="13" font-weight="600">거품 O</text>
+  <text x="230" y="240" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 방해석</text>
 
-      <!-- 거품 X → 다음 단계 -->
-      <rect x="570" y="202" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-      <text x="670" y="226" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">거품 X</text>
+  <!-- 거품 X → 다음 단계 -->
+  <rect x="570" y="202" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+  <text x="670" y="226" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">거품 X</text>
 
-      <line x1="670" y1="250" x2="670" y2="278" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="670" y1="250" x2="670" y2="278" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
 
-      <!-- ===== Step 2: 자성 검사 ===== -->
-      <rect x="570" y="280" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-      <text x="670" y="304" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">② 클립을 가까이</text>
+  <!-- ===== Step 2: 자성 검사 ===== -->
+  <rect x="570" y="280" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+  <text x="670" y="304" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">② 클립을 가까이</text>
 
-      <!-- 분기 -->
-      <path d="M 620 328 L 620 355 L 470 355 L 470 380" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 720 328 L 720 355 L 720 380" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <!-- 분기 -->
+  <path d="M 620 328 L 620 355 L 470 355 L 470 380" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 720 328 L 720 355 L 720 380" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
-      <!-- 강하게 붙음 → 자철석 -->
-      <rect x="370" y="382" width="200" height="50" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="470" y="400" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="13" font-weight="600">강하게 붙음</text>
-      <text x="470" y="420" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 자철석</text>
+  <!-- 강하게 붙음 → 자철석 -->
+  <rect x="370" y="382" width="200" height="50" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="470" y="400" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="13" font-weight="600">강하게 붙음</text>
+  <text x="470" y="420" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 자철석</text>
 
-      <!-- 안 붙음 → 다음 단계 -->
-      <rect x="620" y="382" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-      <text x="720" y="406" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">안 붙거나 약함</text>
+  <!-- 안 붙음 → 다음 단계 -->
+  <rect x="620" y="382" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+  <text x="720" y="406" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">안 붙거나 약함</text>
 
-      <line x1="720" y1="430" x2="720" y2="458" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="720" y1="430" x2="720" y2="458" stroke="var(--accent-tertiary)" stroke-width="2" marker-end="url(#arr)"/>
 
-      <!-- ===== Step 3: 조흔색 검사 ===== -->
-      <rect x="620" y="460" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-      <text x="720" y="484" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">③ 조흔판에 긁기</text>
+  <!-- ===== Step 3: 조흔색 검사 ===== -->
+  <rect x="620" y="460" width="200" height="48" rx="10" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+  <text x="720" y="484" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="14" font-weight="600">③ 조흔판에 긁기</text>
 
-      <!-- 5갈래 분기: 5개 박스를 균등 배치 (각 박스 width 160, gap 15) -->
-      <path d="M 645 508 L 645 540 L 100 540 L 100 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 685 508 L 685 540 L 285 540 L 285 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 720 508 L 720 540 L 470 540 L 470 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 750 508 L 750 540 L 655 540 L 655 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
-      <path d="M 790 508 L 790 540 L 840 540 L 840 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <!-- 5갈래 분기: 5개 박스를 균등 배치 (각 박스 width 160, gap 15) -->
+  <path d="M 645 508 L 645 540 L 100 540 L 100 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 685 508 L 685 540 L 285 540 L 285 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 720 508 L 720 540 L 470 540 L 470 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 750 508 L 750 540 L 655 540 L 655 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M 790 508 L 790 540 L 840 540 L 840 580" stroke="var(--accent-tertiary)" stroke-width="2" fill="none" marker-end="url(#arr)"/>
 
-      <!-- 분기 1: 흰색~회색 조흔색 → 흑운모 -->
-      <rect x="20" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="100" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">흰색~회색 조흔색</text>
-      <text x="100" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 흑운모</text>
-      <text x="100" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(검은색 광물)</text>
+  <!-- 분기 1: 흰색~회색 조흔색 → 흑운모 -->
+  <rect x="20" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="100" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">흰색~회색 조흔색</text>
+  <text x="100" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 흑운모</text>
+  <text x="100" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(검은색 광물)</text>
 
-      <!-- 분기 2: 긁히지 않음 → 석영 -->
-      <rect x="205" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="285" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">긁히지 않음</text>
-      <text x="285" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 석영</text>
-      <text x="285" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 7 &gt; 조흔판)</text>
+  <!-- 분기 2: 긁히지 않음 → 석영 -->
+  <rect x="205" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="285" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">긁히지 않음</text>
+  <text x="285" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 석영</text>
+  <text x="285" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 7 &gt; 조흔판)</text>
 
-      <!-- 분기 3: 붉은색 조흔색 → 적철석 -->
-      <rect x="390" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="470" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">붉은색 조흔색</text>
-      <text x="470" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 적철석</text>
-      <text x="470" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(약한 자성)</text>
+  <!-- 분기 3: 붉은색 조흔색 → 적철석 -->
+  <rect x="390" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="470" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">붉은색 조흔색</text>
+  <text x="470" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 적철석</text>
+  <text x="470" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(약한 자성)</text>
 
-      <!-- 분기 4: 검은색 조흔색 → 황철석 -->
-      <rect x="575" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="655" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">검은색 조흔색</text>
-      <text x="655" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황철석</text>
-      <text x="655" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 6~6.5)</text>
+  <!-- 분기 4: 검은색 조흔색 → 황철석 -->
+  <rect x="575" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="655" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">검은색 조흔색</text>
+  <text x="655" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황철석</text>
+  <text x="655" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 6~6.5)</text>
 
-      <!-- 분기 5: 녹흑색 조흔색 → 황동석 -->
-      <rect x="760" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
-      <text x="840" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">녹흑색 조흔색</text>
-      <text x="840" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황동석</text>
-      <text x="840" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 3.5~4)</text>
+  <!-- 분기 5: 녹흑색 조흔색 → 황동석 -->
+  <rect x="760" y="582" width="160" height="62" rx="10" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2.5"/>
+  <text x="840" y="600" text-anchor="middle" dominant-baseline="central" fill="var(--text-primary)" font-size="12" font-weight="600">녹흑색 조흔색</text>
+  <text x="840" y="620" text-anchor="middle" dominant-baseline="central" fill="var(--accent-primary)" font-size="14" font-weight="700">→ 황동석</text>
+  <text x="840" y="638" text-anchor="middle" dominant-baseline="central" fill="var(--text-muted)" font-size="10">(굳기 3.5~4)</text>
 
-      <!-- 범례 -->
-      <g transform="translate(30, 680)">
-        <rect x="0" y="0" width="14" height="14" rx="3" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2"/>
-        <text x="22" y="11" font-size="12" fill="var(--text-secondary)">최종 식별</text>
-        <rect x="120" y="0" width="14" height="14" rx="3" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
-        <text x="142" y="11" font-size="12" fill="var(--text-secondary)">중간 단계</text>
-        <rect x="240" y="0" width="14" height="14" rx="3" fill="rgba(212,160,76,0.18)" stroke="var(--accent-secondary)" stroke-width="2"/>
-        <text x="262" y="11" font-size="12" fill="var(--text-secondary)">추가 검사 필요</text>
-      </g>
-    </svg>
-  `;
+  <!-- 범례 -->
+  <g transform="translate(30, 680)">
+    <rect x="0" y="0" width="14" height="14" rx="3" fill="rgba(74,124,89,0.18)" stroke="var(--accent-tertiary)" stroke-width="2"/>
+    <text x="22" y="11" font-size="12" fill="var(--text-secondary)">최종 식별</text>
+    <rect x="120" y="0" width="14" height="14" rx="3" fill="url(#boxGrad)" stroke="var(--accent-secondary)" stroke-width="2"/>
+    <text x="142" y="11" font-size="12" fill="var(--text-secondary)">중간 단계</text>
+    <rect x="240" y="0" width="14" height="14" rx="3" fill="rgba(212,160,76,0.18)" stroke="var(--accent-secondary)" stroke-width="2"/>
+    <text x="262" y="11" font-size="12" fill="var(--text-secondary)">추가 검사 필요</text>
+  </g>
+</svg>
+```
+
+`;
 }
 
 // ============== 9단계: 결과 보고서 ==============
 function buildStage8() {
-  const stage = document.getElementById('stage-8');
-  stage.innerHTML = `
-    <div class="stage-card" id="reportCard">
-      <h2 class="stage-title"><span class="stage-number">STEP 9</span> 실험 결과 보고서</h2>
-      <p class="stage-subtitle">실험 결과를 종합하여 정리합니다. 보고서를 PDF로 다운로드하거나 다시 실험할 수 있어요. 🎉</p>
+const stage = document.getElementById(‘stage-8’);
+stage.innerHTML = `
+<div class="stage-card" id="reportCard">
+<h2 class="stage-title"><span class="stage-number">STEP 9</span> 실험 결과 보고서</h2>
+<p class="stage-subtitle">실험 결과를 종합하여 정리합니다. 보고서를 PDF로 다운로드하거나 다시 실험할 수 있어요. 🎉</p>
 
-      <div class="result-grid" id="scoreGrid"></div>
+```
+  <div class="result-grid" id="scoreGrid"></div>
 
-      <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📊 7가지 광물 특성 비교표</h3>
-      <div style="overflow-x:auto;">
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>광물</th><th>겉보기 색</th><th>조흔색</th><th>자성</th><th>염산 반응</th><th>굳기</th>
-            </tr>
-          </thead>
-          <tbody id="finalCompareTable"></tbody>
-        </table>
+  <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📊 7가지 광물 특성 비교표</h3>
+  <div style="overflow-x:auto;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>광물</th><th>겉보기 색</th><th>조흔색</th><th>자성</th><th>염산 반응</th><th>굳기</th>
+        </tr>
+      </thead>
+      <tbody id="finalCompareTable"></tbody>
+    </table>
+  </div>
+
+  <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📈 굳기 차트</h3>
+  <div style="position:relative; height:280px; max-width:600px; margin:0 auto;">
+    <canvas id="hardnessChart"></canvas>
+  </div>
+
+  <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📏 모스 굳기계에서의 위치</h3>
+  <div class="mohs-scale" id="finalMohs"></div>
+
+  <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📋 정리 활동 답안 요약</h3>
+  <div id="summaryAnswersBox" style="background:var(--bg-secondary); border-radius:12px; padding:20px; border:1px solid var(--border-color);"></div>
+
+  <div class="ai-rec-section">
+    <div class="ai-rec-title">🤖 AI 추천 - 더 깊이 탐구하기</div>
+    <div class="ai-rec-grid">
+      <div class="ai-rec-item">
+        <h4>🗺️ 한국 광물 산지</h4>
+        <p>강원도 정선(석회암·방해석), 충남 보령(흑운모 편마암), 경북 봉화(자철석)에서 광물 표본 견학이 가능합니다.</p>
       </div>
-
-      <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📈 굳기 차트</h3>
-      <div style="position:relative; height:280px; max-width:600px; margin:0 auto;">
-        <canvas id="hardnessChart"></canvas>
+      <div class="ai-rec-item">
+        <h4>🔬 추가 탐구 광물</h4>
+        <p>장석·각섬석·휘석·감람석·운모류 등을 추가로 학습하면 화성암을 이루는 조암광물을 더 깊이 이해할 수 있어요.</p>
       </div>
-
-      <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📏 모스 굳기계에서의 위치</h3>
-      <div class="mohs-scale" id="finalMohs"></div>
-
-      <h3 style="font-family:'Black Han Sans',sans-serif; font-size:20px; margin:24px 0 12px;">📋 정리 활동 답안 요약</h3>
-      <div id="summaryAnswersBox" style="background:var(--bg-secondary); border-radius:12px; padding:20px; border:1px solid var(--border-color);"></div>
-
-      <div class="ai-rec-section">
-        <div class="ai-rec-title">🤖 AI 추천 - 더 깊이 탐구하기</div>
-        <div class="ai-rec-grid">
-          <div class="ai-rec-item">
-            <h4>🗺️ 한국 광물 산지</h4>
-            <p>강원도 정선(석회암·방해석), 충남 보령(흑운모 편마암), 경북 봉화(자철석)에서 광물 표본 견학이 가능합니다.</p>
-          </div>
-          <div class="ai-rec-item">
-            <h4>🔬 추가 탐구 광물</h4>
-            <p>장석·각섬석·휘석·감람석·운모류 등을 추가로 학습하면 화성암을 이루는 조암광물을 더 깊이 이해할 수 있어요.</p>
-          </div>
-          <div class="ai-rec-item">
-            <h4>📐 모스 굳기계 확장</h4>
-            <p>1번 활석부터 10번 금강석까지 전체 10종의 표준 광물을 비교하며 굳기 실험을 확장해보세요.</p>
-          </div>
-          <div class="ai-rec-item">
-            <h4>💎 결정 구조 시각화</h4>
-            <p>VESTA·Crystal Maker·Jmol 같은 도구로 광물의 결정 구조(원자 배열)를 3D로 관찰할 수 있습니다.</p>
-          </div>
-          <div class="ai-rec-item">
-            <h4>🏗️ 실생활 활용 사례</h4>
-            <p>방해석 → 시멘트·분필 / 자철석 → 나침반·자기 기록 / 적철석 → 제철 원료·붉은 안료 / 석영 → 시계 진동자·반도체 / 황철석 → "바보의 금"</p>
-          </div>
-          <div class="ai-rec-item">
-            <h4>📚 다음 학습 추천</h4>
-            <p>광물 구분이 끝났다면 다음은 암석의 종류(화성암·퇴적암·변성암)와 광물의 풍화 작용을 학습해보세요.</p>
-          </div>
-        </div>
+      <div class="ai-rec-item">
+        <h4>📐 모스 굳기계 확장</h4>
+        <p>1번 활석부터 10번 금강석까지 전체 10종의 표준 광물을 비교하며 굳기 실험을 확장해보세요.</p>
       </div>
-
-      <div class="stage-nav">
-        <button class="btn" onclick="goToStage(7)">← 이전</button>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <button class="btn btn-primary" id="downloadPdfBtn">📄 PDF 다운로드</button>
-          <button class="btn btn-secondary" id="restartLabBtn">🔄 다시 실험</button>
-        </div>
+      <div class="ai-rec-item">
+        <h4>💎 결정 구조 시각화</h4>
+        <p>VESTA·Crystal Maker·Jmol 같은 도구로 광물의 결정 구조(원자 배열)를 3D로 관찰할 수 있습니다.</p>
+      </div>
+      <div class="ai-rec-item">
+        <h4>🏗️ 실생활 활용 사례</h4>
+        <p>방해석 → 시멘트·분필 / 자철석 → 나침반·자기 기록 / 적철석 → 제철 원료·붉은 안료 / 석영 → 시계 진동자·반도체 / 황철석 → "바보의 금"</p>
+      </div>
+      <div class="ai-rec-item">
+        <h4>📚 다음 학습 추천</h4>
+        <p>광물 구분이 끝났다면 다음은 암석의 종류(화성암·퇴적암·변성암)와 광물의 풍화 작용을 학습해보세요.</p>
       </div>
     </div>
-  `;
+  </div>
 
-  document.addEventListener('stage8-enter', renderResults);
-  if (STATE.currentStage === 8) {
-    setTimeout(renderResults, 50);
-  }
+  <div class="stage-nav">
+    <button class="btn" onclick="goToStage(7)">← 이전</button>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="btn btn-primary" id="downloadPdfBtn">📄 PDF 다운로드</button>
+      <button class="btn btn-secondary" id="restartLabBtn">🔄 다시 실험</button>
+    </div>
+  </div>
+</div>
+```
 
-  function renderResults() {
-    const totalScore = Object.values(STATE.scores).reduce((a,b) => a+b, 0);
-    const grid = stage.querySelector('#scoreGrid');
-    grid.innerHTML = `
-      <div class="result-card">
-        <div class="result-label">겉보기 색 정답</div>
-        <div class="result-value">${STATE.scores.bodyColor}/7</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">조흔색 정답</div>
-        <div class="result-value">${STATE.scores.streak}/7</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">굳기 퀴즈</div>
-        <div class="result-value">${STATE.scores.quiz}/1</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">카드 매칭 정답</div>
-        <div class="result-value">${STATE.scores.matching}</div>
-      </div>
-      <div class="result-card" style="background:linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color:white;">
-        <div class="result-label" style="color:rgba(255,255,255,0.9);">총 점수</div>
-        <div class="result-value" style="color:white;">${totalScore}</div>
-      </div>
-    `;
+`;
 
-    const tbody = stage.querySelector('#finalCompareTable');
-    tbody.innerHTML = MINERAL_ORDER.map(id => {
-      const m = MINERALS[id];
-      const magText = m.magnetism === 'strong' ? '강한 자성' : m.magnetism === 'weak' ? '약함' : '없음';
-      const hclText = m.hclReaction === 'bubbles' ? '거품 발생(CO₂)' : '반응 없음';
-      return `<tr>
-        <td><strong>${m.name}</strong><br><span style="font-size:11px;color:var(--text-muted)">${m.formula}</span></td>
-        <td>${m.bodyColor[0]}</td>
-        <td>${m.streakColor}</td>
-        <td>${magText}</td>
-        <td>${hclText}</td>
-        <td>${m.hardness}</td>
-      </tr>`;
-    }).join('');
+document.addEventListener(‘stage8-enter’, renderResults);
+if (STATE.currentStage === 8) {
+setTimeout(renderResults, 50);
+}
 
-    const ctx = stage.querySelector('#hardnessChart').getContext('2d');
-    if (window._hardnessChartInst) window._hardnessChartInst.destroy();
-    window._hardnessChartInst = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: MINERAL_ORDER.map(id => MINERALS[id].name),
-        datasets: [{
-          label: '굳기 (모스 척도)',
-          data: MINERAL_ORDER.map(id => MINERALS[id].hardness),
-          backgroundColor: ['#a0a8b8','#e0d8c8','#d4b242','#c8a738','#3a3a3a','#5a3030','#3a2510'],
-          borderColor: ['#7080a0','#a89a82','#8a7818','#7a6818','#000','#1a0808','#000'],
-          borderWidth: 2,
-          borderRadius: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: { beginAtZero: true, max: 10, ticks: { stepSize: 1, color: getCSSVar('--text-secondary') }, grid: {color: getCSSVar('--border-color')} },
-          x: { ticks: { color: getCSSVar('--text-secondary') }, grid: {display: false} }
-        },
-        plugins: {
-          legend: { labels: {color: getCSSVar('--text-primary')} },
-          tooltip: { callbacks: { label: (c) => `굳기 ${c.parsed.y}` } }
-        }
-      }
-    });
+function renderResults() {
+const totalScore = Object.values(STATE.scores).reduce((a,b) => a+b, 0);
+const grid = stage.querySelector(’#scoreGrid’);
+grid.innerHTML = `<div class="result-card"> <div class="result-label">겉보기 색 정답</div> <div class="result-value">${STATE.scores.bodyColor}/7</div> </div> <div class="result-card"> <div class="result-label">조흔색 정답</div> <div class="result-value">${STATE.scores.streak}/7</div> </div> <div class="result-card"> <div class="result-label">굳기 퀴즈</div> <div class="result-value">${STATE.scores.quiz}/1</div> </div> <div class="result-card"> <div class="result-label">카드 매칭 정답</div> <div class="result-value">${STATE.scores.matching}</div> </div> <div class="result-card" style="background:linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color:white;"> <div class="result-label" style="color:rgba(255,255,255,0.9);">총 점수</div> <div class="result-value" style="color:white;">${totalScore}</div> </div>`;
 
-    const mohs = stage.querySelector('#finalMohs');
-    const minByH = {};
-    MINERAL_ORDER.forEach(id => {
-      const h = Math.round(MINERALS[id].hardness);
-      if (!minByH[h]) minByH[h] = [];
-      minByH[h].push(MINERALS[id].name);
-    });
-    mohs.innerHTML = '';
-    const standards = ['활석','석고','방해석','형석','인회석','정장석','석영','황옥','강옥','금강석'];
-    for (let i = 1; i <= 10; i++) {
-      const div = document.createElement('div');
-      div.className = 'mohs-item' + (minByH[i] ? ' has-mineral' : '');
-      div.innerHTML = `<span class="mohs-num">${i}</span>${standards[i-1]}${minByH[i] ? '<br><small>('+minByH[i].join(', ')+')</small>' : ''}`;
-      mohs.appendChild(div);
-    }
+```
+const tbody = stage.querySelector('#finalCompareTable');
+tbody.innerHTML = MINERAL_ORDER.map(id => {
+  const m = MINERALS[id];
+  const magText = m.magnetism === 'strong' ? '강한 자성' : m.magnetism === 'weak' ? '약함' : '없음';
+  const hclText = m.hclReaction === 'bubbles' ? '거품 발생(CO₂)' : '반응 없음';
+  return `<tr>
+    <td><strong>${m.name}</strong><br><span style="font-size:11px;color:var(--text-muted)">${m.formula}</span></td>
+    <td>${m.bodyColor[0]}</td>
+    <td>${m.streakColor}</td>
+    <td>${magText}</td>
+    <td>${hclText}</td>
+    <td>${m.hardness}</td>
+  </tr>`;
+}).join('');
 
-    const sb = stage.querySelector('#summaryAnswersBox');
-    const a3Done = ['pair1Done','pair2Done','pair3Done'].filter(k => STATE.summaryAnswers.a3[k]).length;
-    sb.innerHTML = `
-      <div style="margin-bottom:12px;">
-        <strong>활동 1 (석영 조흔색):</strong> ${STATE.summaryAnswers.a1Text || '응답 없음'}
-      </div>
-      <div style="margin-bottom:12px;">
-        <strong>활동 2 (석영-방해석 구별):</strong> ${STATE.summaryAnswers.a2.length}개 항목 선택
-      </div>
-      <div style="margin-bottom:12px;">
-        <strong>활동 3 (카드 매칭):</strong> ${a3Done}/3 쌍 비교 완료, 정답 카드 ${STATE.scores.matching}개
-      </div>
-      <div>
-        <strong>활동 4 (빈칸 채우기):</strong> ${STATE.summaryAnswers.a4.correctCount}/6 정답
-      </div>
-    `;
-
-    if (totalScore >= 20) {
-      setTimeout(() => launchConfetti(1.5), 500);
+const ctx = stage.querySelector('#hardnessChart').getContext('2d');
+if (window._hardnessChartInst) window._hardnessChartInst.destroy();
+window._hardnessChartInst = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: MINERAL_ORDER.map(id => MINERALS[id].name),
+    datasets: [{
+      label: '굳기 (모스 척도)',
+      data: MINERAL_ORDER.map(id => MINERALS[id].hardness),
+      backgroundColor: ['#a0a8b8','#e0d8c8','#d4b242','#c8a738','#3a3a3a','#5a3030','#3a2510'],
+      borderColor: ['#7080a0','#a89a82','#8a7818','#7a6818','#000','#1a0808','#000'],
+      borderWidth: 2,
+      borderRadius: 8
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: { beginAtZero: true, max: 10, ticks: { stepSize: 1, color: getCSSVar('--text-secondary') }, grid: {color: getCSSVar('--border-color')} },
+      x: { ticks: { color: getCSSVar('--text-secondary') }, grid: {display: false} }
+    },
+    plugins: {
+      legend: { labels: {color: getCSSVar('--text-primary')} },
+      tooltip: { callbacks: { label: (c) => `굳기 ${c.parsed.y}` } }
     }
   }
+});
 
-  stage.querySelector('#downloadPdfBtn').addEventListener('click', () => {
-    downloadPDF();
-  });
+const mohs = stage.querySelector('#finalMohs');
+const minByH = {};
+MINERAL_ORDER.forEach(id => {
+  const h = Math.round(MINERALS[id].hardness);
+  if (!minByH[h]) minByH[h] = [];
+  minByH[h].push(MINERALS[id].name);
+});
+mohs.innerHTML = '';
+const standards = ['활석','석고','방해석','형석','인회석','정장석','석영','황옥','강옥','금강석'];
+for (let i = 1; i <= 10; i++) {
+  const div = document.createElement('div');
+  div.className = 'mohs-item' + (minByH[i] ? ' has-mineral' : '');
+  div.innerHTML = `<span class="mohs-num">${i}</span>${standards[i-1]}${minByH[i] ? '<br><small>('+minByH[i].join(', ')+')</small>' : ''}`;
+  mohs.appendChild(div);
+}
 
-  stage.querySelector('#restartLabBtn').addEventListener('click', () => {
-    if (confirm('실험을 처음부터 다시 시작하시겠습니까?')) location.reload();
-  });
+const sb = stage.querySelector('#summaryAnswersBox');
+const a3Done = ['pair1Done','pair2Done','pair3Done'].filter(k => STATE.summaryAnswers.a3[k]).length;
+sb.innerHTML = `
+  <div style="margin-bottom:12px;">
+    <strong>활동 1 (석영 조흔색):</strong> ${STATE.summaryAnswers.a1Text || '응답 없음'}
+  </div>
+  <div style="margin-bottom:12px;">
+    <strong>활동 2 (석영-방해석 구별):</strong> ${STATE.summaryAnswers.a2.length}개 항목 선택
+  </div>
+  <div style="margin-bottom:12px;">
+    <strong>활동 3 (카드 매칭):</strong> ${a3Done}/3 쌍 비교 완료, 정답 카드 ${STATE.scores.matching}개
+  </div>
+  <div>
+    <strong>활동 4 (빈칸 채우기):</strong> ${STATE.summaryAnswers.a4.correctCount}/6 정답
+  </div>
+`;
+
+if (totalScore >= 20) {
+  setTimeout(() => launchConfetti(1.5), 500);
+}
+```
+
+}
+
+stage.querySelector(’#downloadPdfBtn’).addEventListener(‘click’, () => {
+downloadPDF();
+});
+
+stage.querySelector(’#restartLabBtn’).addEventListener(‘click’, () => {
+if (confirm(‘실험을 처음부터 다시 시작하시겠습니까?’)) location.reload();
+});
 }
 
 function getCSSVar(name) {
-  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
 // stage 8 진입 시 결과 렌더링 트리거
 const _origGoToStage = goToStage;
 goToStage = function(n) {
-  _origGoToStage(n);
-  if (n === 8) {
-    setTimeout(() => document.dispatchEvent(new Event('stage8-enter')), 50);
-  }
+_origGoToStage(n);
+if (n === 8) {
+setTimeout(() => document.dispatchEvent(new Event(‘stage8-enter’)), 50);
+}
 };
 
 // ============== 컨페티 ==============
 function launchConfetti(intensity = 1) {
-  const canvas = document.getElementById('confettiCanvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  const particles = [];
-  const colors = ['#c8472b','#d4a04c','#4a7c59','#e8b85c','#9c3a28'];
-  const count = Math.floor(80 * intensity);
-  for (let i = 0; i < count; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: -20,
-      vx: (Math.random() - 0.5) * 6,
-      vy: 2 + Math.random() * 4,
-      size: 6 + Math.random() * 6,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      rot: Math.random() * Math.PI * 2,
-      vr: (Math.random() - 0.5) * 0.2
-    });
-  }
-  let frame = 0;
-  const animate = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let alive = false;
-    particles.forEach(p => {
-      if (p.y < canvas.height + 20) {
-        alive = true;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vy += 0.1;
-        p.rot += p.vr;
-        ctx.save();
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.fillStyle = p.color;
-        ctx.fillRect(-p.size/2, -p.size/4, p.size, p.size/2);
-        ctx.restore();
-      }
-    });
-    frame++;
-    if (alive && frame < 300) requestAnimationFrame(animate);
-    else ctx.clearRect(0, 0, canvas.width, canvas.height);
-  };
-  animate();
+const canvas = document.getElementById(‘confettiCanvas’);
+const ctx = canvas.getContext(‘2d’);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const particles = [];
+const colors = [’#c8472b’,’#d4a04c’,’#4a7c59’,’#e8b85c’,’#9c3a28’];
+const count = Math.floor(80 * intensity);
+for (let i = 0; i < count; i++) {
+particles.push({
+x: Math.random() * canvas.width,
+y: -20,
+vx: (Math.random() - 0.5) * 6,
+vy: 2 + Math.random() * 4,
+size: 6 + Math.random() * 6,
+color: colors[Math.floor(Math.random() * colors.length)],
+rot: Math.random() * Math.PI * 2,
+vr: (Math.random() - 0.5) * 0.2
+});
+}
+let frame = 0;
+const animate = () => {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+let alive = false;
+particles.forEach(p => {
+if (p.y < canvas.height + 20) {
+alive = true;
+p.x += p.vx;
+p.y += p.vy;
+p.vy += 0.1;
+p.rot += p.vr;
+ctx.save();
+ctx.translate(p.x, p.y);
+ctx.rotate(p.rot);
+ctx.fillStyle = p.color;
+ctx.fillRect(-p.size/2, -p.size/4, p.size, p.size/2);
+ctx.restore();
+}
+});
+frame++;
+if (alive && frame < 300) requestAnimationFrame(animate);
+else ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+animate();
 }
 
 // ============== PDF 다운로드 ==============
 async function downloadPDF() {
-  try {
-    const btn = document.getElementById('downloadPdfBtn');
-    btn.disabled = true;
-    btn.textContent = '⏳ PDF 생성 중...';
+try {
+const btn = document.getElementById(‘downloadPdfBtn’);
+btn.disabled = true;
+btn.textContent = ‘⏳ PDF 생성 중…’;
 
-    const card = document.getElementById('reportCard');
-    const canvas = await html2canvas(card, {
-      backgroundColor: getCSSVar('--bg-card') || '#ffffff',
-      scale: 1.5,
-      useCORS: true
-    });
-    const imgData = canvas.toDataURL('image/png');
-    const { jsPDF } = window.jspdf;
+```
+const card = document.getElementById('reportCard');
+const canvas = await html2canvas(card, {
+  backgroundColor: getCSSVar('--bg-card') || '#ffffff',
+  scale: 1.5,
+  useCORS: true
+});
+const imgData = canvas.toDataURL('image/png');
+const { jsPDF } = window.jspdf;
 
-    // A4 크기(mm), 안전 여백
-    const A4_W = 210, A4_H = 297, MARGIN = 8;
-    // 보고서 캔버스의 가로/세로 비율로 PDF 방향 자동 선택
-    const isPortrait = canvas.height >= canvas.width;
-    const pageW = isPortrait ? A4_W : A4_H;
-    const pageH = isPortrait ? A4_H : A4_W;
-    const pdf = new jsPDF(isPortrait ? 'p' : 'l', 'mm', 'a4');
+// A4 크기(mm), 안전 여백
+const A4_W = 210, A4_H = 297, MARGIN = 8;
+// 보고서 캔버스의 가로/세로 비율로 PDF 방향 자동 선택
+const isPortrait = canvas.height >= canvas.width;
+const pageW = isPortrait ? A4_W : A4_H;
+const pageH = isPortrait ? A4_H : A4_W;
+const pdf = new jsPDF(isPortrait ? 'p' : 'l', 'mm', 'a4');
 
-    // 한 페이지 안에 비율 유지하며 fit (가로·세로 모두 페이지 내부에 들어오도록)
-    const availW = pageW - MARGIN * 2;
-    const availH = pageH - MARGIN * 2;
-    const imgRatio = canvas.width / canvas.height;
-    let drawW = availW, drawH = availW / imgRatio;
-    if (drawH > availH) {
-      drawH = availH;
-      drawW = availH * imgRatio;
-    }
-    // 페이지 중앙에 배치
-    const offsetX = (pageW - drawW) / 2;
-    const offsetY = (pageH - drawH) / 2;
-    pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawW, drawH);
+// 한 페이지 안에 비율 유지하며 fit (가로·세로 모두 페이지 내부에 들어오도록)
+const availW = pageW - MARGIN * 2;
+const availH = pageH - MARGIN * 2;
+const imgRatio = canvas.width / canvas.height;
+let drawW = availW, drawH = availW / imgRatio;
+if (drawH > availH) {
+  drawH = availH;
+  drawW = availH * imgRatio;
+}
+// 페이지 중앙에 배치
+const offsetX = (pageW - drawW) / 2;
+const offsetY = (pageH - drawH) / 2;
+pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawW, drawH);
 
-    const date = new Date().toISOString().slice(0,10);
-    pdf.save(`송쌤과학_광물특성_보고서_${date}.pdf`);
+const date = new Date().toISOString().slice(0,10);
+pdf.save(`송쌤과학_광물특성_보고서_${date}.pdf`);
 
-    btn.disabled = false;
-    btn.textContent = '📄 PDF 다운로드';
-    playSound('success');
-  } catch (err) {
-    console.error(err);
-    alert('PDF 생성 중 오류가 발생했습니다: ' + err.message);
-    document.getElementById('downloadPdfBtn').disabled = false;
-    document.getElementById('downloadPdfBtn').textContent = '📄 PDF 다운로드';
-  }
+btn.disabled = false;
+btn.textContent = '📄 PDF 다운로드';
+playSound('success');
+```
+
+} catch (err) {
+console.error(err);
+alert(’PDF 생성 중 오류가 발생했습니다: ’ + err.message);
+document.getElementById(‘downloadPdfBtn’).disabled = false;
+document.getElementById(‘downloadPdfBtn’).textContent = ‘📄 PDF 다운로드’;
+}
 }
 
 </script>
