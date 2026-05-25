@@ -1569,7 +1569,7 @@ const MINERALS = {
   quartz: {
     id: 'quartz', name: '석영', formula: 'SiO₂',
     bodyColor: ['흰색~무색투명', 'colorless'],
-    streakColor: '긁히지 않음', streakRgb: null,
+    streakColor: '조흔판으로 관찰 불가(석영 > 조흔판 굳기)', streakRgb: null,
     magnetism: 'none',
     hclReaction: 'none',
     hardness: 7,
@@ -1580,7 +1580,7 @@ const MINERALS = {
       {label:'붉은색', color:'#a0392c', correct:false}
     ],
     streakColorOptions: [
-      {label:'조흔판에 긁히지 않음', color:'#ffffff', correct:true, special:true},
+      {label:'조흔판으로 알 수 없음(석영이 더 단단함)', color:'#ffffff', correct:true, special:true},
       {label:'흰색', color:'#ffffff', correct:false},
       {label:'검은색', color:'#1a1a1a', correct:false},
       {label:'붉은색', color:'#a0392c', correct:false}
@@ -2597,7 +2597,9 @@ function buildStage3() {
       </div>
 
       <div class="info-box warning">
-        ⚠️ <strong>중요:</strong> 광물의 굳기가 조흔판(6.5)보다 크면 <strong>긁히지 않아요.</strong> 어떤 광물이 그럴까요? 직접 확인해보세요!
+        ⚠️ <strong>중요:</strong> 광물의 굳기가 조흔판(6.5)보다 크면 <strong>광물은 긁히지 않고, 오히려 조흔판이 깎여 나옵니다.</strong>
+        이때 보이는 가루는 <strong>조흔판 부스러기</strong>이므로 광물의 조흔색이 아니에요.
+        어떤 광물이 그럴까요? 직접 확인해보세요!
       </div>
 
       <div style="display:grid; grid-template-columns:240px 1fr; gap:24px; margin:20px 0;" id="streakLayout">
@@ -2726,13 +2728,27 @@ function buildStage3() {
   const drawScratch = (canvas, ctx, isBlack, cx, cy, prev) => {
     const m = MINERALS[STATE.selectedMineral];
     if (m.hardness > 6.5) {
-      // 석영: 약간의 가루만
-      ctx.fillStyle = isBlack ? 'rgba(80,80,80,0.1)' : 'rgba(220,220,220,0.2)';
-      for (let i = 0; i < 3; i++) {
+      // 석영(굳기 7) > 조흔판(굳기 6.5)
+      // 광물이 조흔판보다 단단하므로 광물은 깎이지 않고 오히려 조흔판이 깎여 나옴
+      // → 흰색 조흔판: 흰색 가루(조흔판 부스러기), 검은색 조흔판: 검은색 가루(조흔판 부스러기)
+      // → 광물의 흔적(선)은 절대 남기지 않음
+      const plateDustColor = isBlack ? '#2a2a2a' : '#ededed';
+      // 조흔판 표면이 살짝 눌린 자국 (광물 가루가 아니라 조흔판 자체의 미세 부스러기)
+      for (let i = 0; i < 4; i++) {
+        ctx.globalAlpha = 0.15 + Math.random()*0.15;
+        ctx.fillStyle = plateDustColor;
         ctx.beginPath();
-        ctx.arc(cx + (Math.random()-0.5)*8, cy + (Math.random()-0.5)*8, Math.random()*1, 0, Math.PI*2);
+        ctx.arc(
+          cx + (Math.random()-0.5)*14,
+          cy + (Math.random()-0.5)*14,
+          0.4 + Math.random()*0.9,
+          0, Math.PI*2
+        );
         ctx.fill();
       }
+      ctx.globalAlpha = 1;
+      // 단단한 광물이 표면을 미끄러진 듯한 매우 옅은 윤기 (선이 아님, 점들)
+      // 이전 위치 정보(prev)를 사용하지 않으므로 연속된 선은 그려지지 않음
     } else {
       const color = m.streakRgb || '#999';
       ctx.strokeStyle = color;
@@ -2870,7 +2886,15 @@ function buildStage3() {
     fb.classList.remove('show','success','error');
     if (m.hardness > 6.5) {
       fb.classList.add('show','error');
-      fb.innerHTML = `⚠️ <strong>${m.name}(굳기 ${m.hardness})</strong>은 조흔판(굳기 6.5)보다 굳기가 더 커서 <strong>긁히지 않아요!</strong> 직접 드래그해서 확인해보세요. 조흔색이 나타나지 않습니다.`;
+      fb.innerHTML = `
+        🚫 <strong>${m.name}(굳기 ${m.hardness})</strong>은 조흔판(굳기 6.5)<strong>보다 더 단단</strong>합니다.<br>
+        그래서 <strong>${m.name}은 조흔판에 긁히지 않아요!</strong> 오히려 조흔판이 깎여서
+        <strong>흰색 조흔판에서는 흰색 가루(=조흔판 부스러기)</strong>가,
+        <strong>검은색 조흔판에서는 검은색 가루(=조흔판 부스러기)</strong>가 나옵니다.<br>
+        ⚠️ <strong>이 가루는 광물의 조흔색이 아니라 조흔판 자체가 깎여 나온 것</strong>이므로,
+        ${m.name}의 조흔색은 <strong>조흔판으로 알 수 없습니다.</strong>
+        직접 드래그해서 확인해보세요.
+      `;
     }
     const optsDiv = stage.querySelector('#streakColorOpts');
     optsDiv.innerHTML = '';
@@ -2894,7 +2918,11 @@ function buildStage3() {
           setTimeout(() => playSound('success'), 100);
           fb.classList.add('show','success');
           if (opt.special) {
-            fb.innerHTML = `✅ <strong>정확해요!</strong> 석영의 굳기(7)가 조흔판(6.5)보다 커서 긁히지 않습니다.`;
+            fb.innerHTML = `
+              ✅ <strong>정확해요!</strong> 석영의 굳기(7) > 조흔판(6.5)이라서 석영은 긁히지 않아요.<br>
+              조흔판에 묻어난 가루는 <strong>석영의 조흔색이 아니라 깎여 나온 조흔판 가루</strong>입니다.
+              따라서 <strong>석영의 조흔색은 조흔판으로는 관찰할 수 없습니다.</strong>
+            `;
           } else {
             fb.innerHTML = `✅ <strong>정답이에요!</strong> ${m.name}의 조흔색은 <strong>${opt.label}</strong>입니다.`;
           }
@@ -2905,14 +2933,28 @@ function buildStage3() {
             if (shuffledOpts[idx].correct) b.classList.add('correct');
           });
           fb.classList.add('show','error');
-          fb.innerHTML = `🔍 ${m.name}의 조흔색은 <strong>${correctOpt.label}</strong>입니다.`;
+          if (correctOpt.special) {
+            // 석영처럼 조흔판으로 관찰 불가능한 광물의 경우
+            fb.innerHTML = `
+              ❌ <strong>다시 생각해보세요.</strong> ${m.name}(굳기 ${m.hardness})은 조흔판(6.5)보다 단단해서 긁히지 않습니다.<br>
+              조흔판에 묻어 보이는 흰색/검은색 가루는 <strong>조흔판 자체가 깎여 나온 부스러기</strong>일 뿐,
+              ${m.name}의 조흔색이 아니에요. 정답은 <strong>${correctOpt.label}</strong>입니다.
+            `;
+          } else {
+            fb.innerHTML = `🔍 ${m.name}의 조흔색은 <strong>${correctOpt.label}</strong>입니다.`;
+          }
           playSound('error');
         }
         STATE.observed[id].streak = true;
         const log = stage.querySelector('#streakLog');
         const entry = document.createElement('div');
         entry.className = 'log-entry';
-        entry.innerHTML = `<strong>${m.name}</strong>: ${m.streakColor}`;
+        // 석영처럼 조흔판보다 단단한 광물은 일지에서도 명확히 구분되어 보이도록 표시
+        if (m.hardness > 6.5) {
+          entry.innerHTML = `<strong>${m.name}</strong>: <span style="color:var(--accent-primary); font-weight:600;">조흔판으로 관찰 불가</span> (굳기 ${m.hardness} > 조흔판 6.5)`;
+        } else {
+          entry.innerHTML = `<strong>${m.name}</strong>: ${m.streakColor}`;
+        }
         log.appendChild(entry);
         updateStreakSwitcher();
         const allDone = MINERAL_ORDER.every(id => STATE.observed[id].streak);
@@ -4561,10 +4603,14 @@ function buildStage8() {
       const m = MINERALS[id];
       const magText = m.magnetism === 'strong' ? '강한 자성' : m.magnetism === 'weak' ? '약함' : '없음';
       const hclText = m.hclReaction === 'bubbles' ? '거품 발생(CO₂)' : '반응 없음';
+      // 석영처럼 조흔판(굳기 6.5)보다 단단한 광물은 조흔판으로 조흔색을 관찰할 수 없음
+      const streakCell = (m.hardness > 6.5)
+        ? `<span style="color:var(--accent-primary); font-weight:600;">조흔판으로 관찰 불가</span><br><span style="font-size:11px; color:var(--text-muted);">(굳기 ${m.hardness} > 조흔판 6.5)</span>`
+        : m.streakColor;
       return `<tr>
         <td><strong>${m.name}</strong><br><span style="font-size:11px;color:var(--text-muted)">${m.formula}</span></td>
         <td>${m.bodyColor[0]}</td>
-        <td>${m.streakColor}</td>
+        <td>${streakCell}</td>
         <td>${magText}</td>
         <td>${hclText}</td>
         <td>${m.hardness}</td>
